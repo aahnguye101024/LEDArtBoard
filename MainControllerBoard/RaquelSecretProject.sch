@@ -1,0 +1,3414 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A2 23386 16535
+encoding utf-8
+Sheet 1 1
+Title "MainControllerBoard"
+Date ""
+Rev "A"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L personal_switch:FSM2JSMAA SW2
+U 1 1 61CD9024
+P 21300 2800
+F 0 "SW2" H 21300 3185 50  0000 C CNN
+F 1 "FSM2JSMAA" H 21300 3094 50  0000 C CNN
+F 2 "personal:SW_2-1437565-8" H 21300 3100 50  0001 C CNN
+F 3 "http://www.apem.com/int/index.php?controller=attachment&id_attachment=1371" H 21300 3100 50  0001 C CNN
+F 4 "FSM2JSMAA" H 21100 3200 50  0001 C CNN "Manufacturer"
+F 5 "450-3355-ND" H 21150 3300 50  0001 C CNN "Part Number"
+	1    21300 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:10uF C20
+U 1 1 61D0668A
+P 4150 6800
+F 0 "C20" H 4242 6937 50  0000 L CNN
+F 1 "10uF" H 4242 6846 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 4150 6800 50  0001 C CNN
+F 3 "~" H 4150 6800 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 4150 6800 50  0001 C CNN "Manufacturer"
+F 5 "1276-2893-1-ND" H 4150 6800 50  0001 C CNN "Part Number"
+F 6 "0805" H 4242 6755 50  0000 L CNN "Size"
+F 7 "16V" H 4242 6664 50  0000 L CNN "Voltage"
+	1    4150 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:10uF C21
+U 1 1 61D08347
+P 4550 6800
+F 0 "C21" H 4642 6937 50  0000 L CNN
+F 1 "10uF" H 4642 6846 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 4550 6800 50  0001 C CNN
+F 3 "~" H 4550 6800 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 4550 6800 50  0001 C CNN "Manufacturer"
+F 5 "1276-2893-1-ND" H 4550 6800 50  0001 C CNN "Part Number"
+F 6 "0805" H 4642 6755 50  0000 L CNN "Size"
+F 7 "16V" H 4642 6664 50  0000 L CNN "Voltage"
+	1    4550 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:10uF C22
+U 1 1 61D08CC2
+P 4900 6800
+F 0 "C22" H 4992 6937 50  0000 L CNN
+F 1 "10uF" H 4992 6846 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 4900 6800 50  0001 C CNN
+F 3 "~" H 4900 6800 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 4900 6800 50  0001 C CNN "Manufacturer"
+F 5 "1276-2893-1-ND" H 4900 6800 50  0001 C CNN "Part Number"
+F 6 "0805" H 4992 6755 50  0000 L CNN "Size"
+F 7 "16V" H 4992 6664 50  0000 L CNN "Voltage"
+	1    4900 6800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 6700 4550 6600
+Connection ~ 4550 6600
+Wire Wire Line
+	4550 6600 4900 6600
+Wire Wire Line
+	4150 6700 4150 6600
+Connection ~ 4150 6600
+Wire Wire Line
+	4150 6600 4400 6600
+Wire Wire Line
+	4900 6600 4900 6700
+$Comp
+L power:VBUS #PWR025
+U 1 1 61D0C38B
+P 4400 6600
+F 0 "#PWR025" H 4400 6450 50  0001 C CNN
+F 1 "VBUS" H 4415 6773 50  0000 C CNN
+F 2 "" H 4400 6600 50  0001 C CNN
+F 3 "" H 4400 6600 50  0001 C CNN
+	1    4400 6600
+	1    0    0    -1  
+$EndComp
+Connection ~ 4400 6600
+Wire Wire Line
+	4400 6600 4550 6600
+$Comp
+L personal_resistors:5.1k R14
+U 1 1 61D0D73E
+P 4150 7150
+F 0 "R14" V 4200 7250 50  0000 L CNN
+F 1 "5.1k" V 4200 6850 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 4150 7150 50  0001 C CNN
+F 3 "~" H 4150 7150 50  0001 C CNN
+F 4 "YAGEO" H 4150 7150 50  0001 C CNN "Manufacturer"
+F 5 "311-5.10KLRCT-ND" H 4150 7150 50  0001 C CNN "Part Number"
+F 6 "0402" H 4218 7059 50  0001 L CNN "Size"
+	1    4150 7150
+	0    -1   -1   0   
+$EndComp
+Text Label 4200 7550 0    50   ~ 0
+USB1_P
+Text Label 4200 7650 0    50   ~ 0
+USB1_N
+$Comp
+L Interface_USB:FT232RL U2
+U 1 1 61CF7632
+P 7850 7950
+F 0 "U2" H 7250 8950 50  0000 C CNN
+F 1 "FT232RL" H 7350 8850 50  0000 C CNN
+F 2 "Package_SO:SSOP-28_5.3x10.2mm_P0.65mm" H 8950 7050 50  0001 C CNN
+F 3 "https://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT232R.pdf" H 7850 7950 50  0001 C CNN
+F 4 "Ologic" H 7850 7950 50  0001 C CNN "Manufacturer"
+F 5 "Ologic" H 7850 7950 50  0001 C CNN "Part Number"
+	1    7850 7950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7850 8950 7850 9000
+Wire Wire Line
+	7850 9000 7950 9000
+Wire Wire Line
+	8050 9000 8050 8950
+Connection ~ 7950 9000
+Wire Wire Line
+	7950 9000 8050 9000
+Wire Wire Line
+	7950 8950 7950 9000
+$Comp
+L power:GND #PWR036
+U 1 1 61D007E4
+P 7650 9000
+F 0 "#PWR036" H 7650 8750 50  0001 C CNN
+F 1 "GND" H 7655 8827 50  0001 C CNN
+F 2 "" H 7650 9000 50  0001 C CNN
+F 3 "" H 7650 9000 50  0001 C CNN
+	1    7650 9000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7650 9000 7650 8950
+$Comp
+L personal_capacitors:0.1uF C23
+U 1 1 61D0B485
+P 6300 7250
+F 0 "C23" V 6350 7300 50  0000 L CNN
+F 1 "0.1uF" V 6350 7000 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 6300 7250 50  0001 C CNN
+F 3 "~" H 6300 7250 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 6300 7250 50  0001 C CNN "Manufacturer"
+F 5 "1276-1043-1-ND" H 6300 7250 50  0001 C CNN "Part Number"
+F 6 "0402" V 6250 7300 50  0000 L CNN "Size"
+F 7 "25V" V 6250 7050 50  0000 L CNN "Voltage"
+	1    6300 7250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5950 7250 6200 7250
+$Comp
+L personal_resistors:0 R16
+U 1 1 61D15F1D
+P 6550 7550
+F 0 "R16" V 6500 7400 50  0000 C CNN
+F 1 "0" V 6500 7700 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 6550 7550 50  0001 C CNN
+F 3 "~" H 6550 7550 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 6550 7550 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402ZT0R00CT-ND" H 6550 7550 50  0001 C CNN "Part Number"
+F 6 "0402" V 6650 7500 50  0001 C CNN "Size"
+	1    6550 7550
+	0    1    1    0   
+$EndComp
+$Comp
+L personal_resistors:0 R17
+U 1 1 61D15F26
+P 6550 7650
+F 0 "R17" V 6500 7500 50  0000 C CNN
+F 1 "0" V 6500 7800 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 6550 7650 50  0001 C CNN
+F 3 "~" H 6550 7650 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 6550 7650 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402ZT0R00CT-ND" H 6550 7650 50  0001 C CNN "Part Number"
+F 6 "0402" V 6650 7600 50  0001 C CNN "Size"
+	1    6550 7650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6650 7550 7050 7550
+Wire Wire Line
+	6650 7650 7050 7650
+Text Label 6750 7550 0    50   ~ 0
+USB2_P
+Text Label 6750 7650 0    50   ~ 0
+USB2_N
+Text Label 6050 7550 0    50   ~ 0
+USB1_P
+Text Label 6050 7650 0    50   ~ 0
+USB1_N
+NoConn ~ 7050 7950
+NoConn ~ 7050 8150
+NoConn ~ 7050 8350
+Wire Wire Line
+	7000 8700 7000 8650
+Wire Wire Line
+	7000 8650 7050 8650
+$Comp
+L power:GND #PWR037
+U 1 1 61D29C60
+P 7950 9000
+F 0 "#PWR037" H 7950 8750 50  0001 C CNN
+F 1 "GND" H 7955 8827 50  0001 C CNN
+F 2 "" H 7950 9000 50  0001 C CNN
+F 3 "" H 7950 9000 50  0001 C CNN
+	1    7950 9000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR034
+U 1 1 61D29FDF
+P 7000 8700
+F 0 "#PWR034" H 7000 8450 50  0001 C CNN
+F 1 "GND" H 7005 8527 50  0001 C CNN
+F 2 "" H 7000 8700 50  0001 C CNN
+F 3 "" H 7000 8700 50  0001 C CNN
+	1    7000 8700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR029
+U 1 1 61D2A94E
+P 5950 7250
+F 0 "#PWR029" H 5950 7000 50  0001 C CNN
+F 1 "GND" H 5955 7077 50  0001 C CNN
+F 2 "" H 5950 7250 50  0001 C CNN
+F 3 "" H 5950 7250 50  0001 C CNN
+	1    5950 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_leds:SML-D12U1WT86 LED2
+U 1 1 61D351D7
+P 9450 8350
+F 0 "LED2" H 9300 8400 50  0000 C CNN
+F 1 "SML-D12U1WT86" H 9500 8450 50  0001 C CNN
+F 2 "LED_SMD:LED_0603_1608Metric" V 9450 8350 50  0001 C CNN
+F 3 "https://fscdn.rohm.com/en/products/databook/datasheet/opto/led/chip_mono/sml-d12x1-e.pdf" V 9450 8350 50  0001 C CNN
+F 4 "Rohm Semiconductor" H 9450 8550 50  0001 C CNN "Manufacturer"
+F 5 "SML-D12U1WT86CT-ND" H 9450 8600 50  0001 C CNN "Part Number"
+F 6 "Red" H 9600 8400 50  0000 C CNN "Color"
+	1    9450 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_leds:SML-D12P8WT86 LED1
+U 1 1 61D436DB
+P 9450 8250
+F 0 "LED1" H 9300 8300 50  0000 C CNN
+F 1 "SML-D12P8WT86" H 9050 8300 50  0001 C CNN
+F 2 "LED_SMD:LED_0603_1608Metric" V 9450 8250 50  0001 C CNN
+F 3 "https://fscdn.rohm.com/en/products/databook/datasheet/opto/led/chip_mono/sml-d12x8_d13x8-e.pdf" V 9450 8250 50  0001 C CNN
+F 4 "Rohm Semiconductor" H 9450 8450 50  0001 C CNN "Manufacturer"
+F 5 "511-1579-1-ND" H 9450 8500 50  0001 C CNN "Part Number"
+F 6 "Green" H 9600 8300 50  0000 C CNN "Color"
+	1    9450 8250
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_resistors:330 R18
+U 1 1 61D4956F
+P 8950 8250
+F 0 "R18" V 8900 8100 50  0000 L CNN
+F 1 "330" V 8900 8350 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8950 8250 50  0001 C CNN
+F 3 "~" H 8950 8250 50  0001 C CNN
+F 4 "YAGEO" H 8950 8250 50  0001 C CNN "Manufacturer"
+F 5 "311-330LRCT-ND" H 8950 8250 50  0001 C CNN "Part Number"
+F 6 "0402" H 9000 8150 50  0001 L CNN "Size"
+	1    8950 8250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9050 8250 9350 8250
+Wire Wire Line
+	8650 8250 8850 8250
+$Comp
+L personal_resistors:330 R19
+U 1 1 61D8FE70
+P 8950 8350
+F 0 "R19" V 8900 8200 50  0000 L CNN
+F 1 "330" V 8900 8450 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8950 8350 50  0001 C CNN
+F 3 "~" H 8950 8350 50  0001 C CNN
+F 4 "YAGEO" H 8950 8350 50  0001 C CNN "Manufacturer"
+F 5 "311-330LRCT-ND" H 8950 8350 50  0001 C CNN "Part Number"
+F 6 "0402" H 9000 8250 50  0001 L CNN "Size"
+	1    8950 8350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9050 8350 9350 8350
+Wire Wire Line
+	8650 8350 8850 8350
+$Comp
+L power:+3V3 #PWR032
+U 1 1 61D9910F
+P 9800 8250
+F 0 "#PWR032" H 9800 8100 50  0001 C CNN
+F 1 "+3V3" H 9815 8423 50  0000 C CNN
+F 2 "" H 9800 8250 50  0001 C CNN
+F 3 "" H 9800 8250 50  0001 C CNN
+	1    9800 8250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9550 8250 9800 8250
+Wire Wire Line
+	9550 8350 9800 8350
+Wire Wire Line
+	9800 8350 9800 8250
+Connection ~ 9800 8250
+Text Notes 9400 8150 0    50   ~ 0
+TX
+Text Notes 9400 8500 0    50   ~ 0
+RX
+NoConn ~ 8650 8450
+NoConn ~ 8650 8550
+NoConn ~ 8650 8650
+$Comp
+L personal_capacitors:4.7uF C18
+U 1 1 61DB4CF1
+P 8200 6750
+F 0 "C18" H 8292 6887 50  0000 L CNN
+F 1 "4.7uF" H 8292 6796 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 8200 6750 50  0001 C CNN
+F 3 "~" H 8200 6750 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 8200 6750 50  0001 C CNN "Manufacturer"
+F 5 "1276-1784-1-ND" H 8200 6750 50  0001 C CNN "Part Number"
+F 6 "0603" H 8292 6705 50  0000 L CNN "Size"
+F 7 "16V" H 8292 6614 50  0000 L CNN "Voltage"
+	1    8200 6750
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:0.1uF C19
+U 1 1 61DB58D0
+P 8600 6750
+F 0 "C19" H 8692 6887 50  0000 L CNN
+F 1 "0.1uF" H 8692 6796 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 8600 6750 50  0001 C CNN
+F 3 "~" H 8600 6750 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 8600 6750 50  0001 C CNN "Manufacturer"
+F 5 "1276-1043-1-ND" H 8600 6750 50  0001 C CNN "Part Number"
+F 6 "0402" H 8692 6705 50  0000 L CNN "Size"
+F 7 "25V" H 8692 6614 50  0000 L CNN "Voltage"
+	1    8600 6750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR027
+U 1 1 61DCAB7B
+P 8400 6950
+F 0 "#PWR027" H 8400 6700 50  0001 C CNN
+F 1 "GND" H 8405 6777 50  0001 C CNN
+F 2 "" H 8400 6950 50  0001 C CNN
+F 3 "" H 8400 6950 50  0001 C CNN
+	1    8400 6950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8200 6850 8200 6950
+Wire Wire Line
+	8200 6950 8400 6950
+Wire Wire Line
+	8600 6950 8600 6850
+Connection ~ 8400 6950
+Wire Wire Line
+	8400 6950 8600 6950
+Wire Wire Line
+	8600 6650 8600 6550
+Wire Wire Line
+	8200 6550 8200 6650
+Wire Wire Line
+	8200 6550 7950 6550
+Wire Wire Line
+	7950 6550 7950 6950
+Connection ~ 8200 6550
+Wire Wire Line
+	7750 6950 7750 6800
+Wire Wire Line
+	7750 6800 7200 6800
+Wire Wire Line
+	6400 7250 7050 7250
+Text Label 6600 7250 0    50   ~ 0
+3V3_F232
+Text Label 7200 6800 0    50   ~ 0
+3V3_F232
+Wire Wire Line
+	8650 7350 9050 7350
+Wire Wire Line
+	8650 7250 9050 7250
+Text Label 8700 7250 0    50   ~ 0
+UART_TX
+Text Label 8700 7350 0    50   ~ 0
+UART_RX
+NoConn ~ 8650 7950
+NoConn ~ 8650 7850
+NoConn ~ 8650 7750
+NoConn ~ 8650 7550
+Wire Wire Line
+	8650 7650 9050 7650
+Wire Wire Line
+	8650 7450 9050 7450
+Text Label 8700 7450 0    50   ~ 0
+RTS
+Text Label 8700 7650 0    50   ~ 0
+DTR
+Text Notes 6800 6250 0    200  ~ 40
+USB to UART
+Text Notes 2700 6600 0    200  ~ 40
+USBC 2.0
+$Comp
+L power:GND #PWR020
+U 1 1 61E91439
+P 5950 4750
+F 0 "#PWR020" H 5950 4500 50  0001 C CNN
+F 1 "GND" H 5955 4577 50  0001 C CNN
+F 2 "" H 5950 4750 50  0001 C CNN
+F 3 "" H 5950 4750 50  0001 C CNN
+	1    5950 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 4700 5950 4700
+Wire Wire Line
+	5950 4700 5950 4750
+$Comp
+L personal_resistors:0 R1
+U 1 1 61E9411C
+P 6250 2100
+F 0 "R1" V 6200 1950 50  0000 C CNN
+F 1 "0" V 6200 2250 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 6250 2100 50  0001 C CNN
+F 3 "~" H 6250 2100 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 6250 2100 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402ZT0R00CT-ND" H 6250 2100 50  0001 C CNN "Part Number"
+F 6 "0402" V 6350 2050 50  0001 C CNN "Size"
+	1    6250 2100
+	0    1    1    0   
+$EndComp
+$Comp
+L personal_resistors:0 R2
+U 1 1 61E96BF3
+P 6250 2200
+F 0 "R2" V 6200 2050 50  0000 C CNN
+F 1 "0" V 6200 2350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 6250 2200 50  0001 C CNN
+F 3 "~" H 6250 2200 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 6250 2200 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402ZT0R00CT-ND" H 6250 2200 50  0001 C CNN "Part Number"
+F 6 "0402" V 6350 2150 50  0001 C CNN "Size"
+	1    6250 2200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5900 2100 6150 2100
+Wire Wire Line
+	5900 2200 6150 2200
+Text Label 6500 2200 0    50   ~ 0
+UART_TX
+Text Label 6500 2100 0    50   ~ 0
+UART_RX
+Wire Wire Line
+	6350 2200 6850 2200
+Wire Wire Line
+	6350 2100 6850 2100
+Text Notes 4450 1200 0    200  ~ 40
+ESP32
+$Comp
+L person_buck:LMZ13610 U3
+U 1 1 61D2D312
+P 9300 11650
+F 0 "U3" H 9300 12017 50  0000 C CNN
+F 1 "LMZ13610" H 9300 11926 50  0000 C CNN
+F 2 "personal:Texas_NDY0011A" H 8350 12550 50  0001 C CNN
+F 3 "https://www.ti.com/lit/ds/symlink/lmz13610.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1641163240183&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Flmz13610" H 8350 12550 50  0001 C CNN
+F 4 "Texas Instruments" H 9300 11650 50  0001 C CNN "Manufacturer"
+F 5 "Ologic" H 9300 11650 50  0001 C CNN "Part Number"
+	1    9300 11650
+	1    0    0    -1  
+$EndComp
+Text Notes 7400 11150 0    200  ~ 40
+12V to 5V 10A Converter
+$Comp
+L personal_ldo:MCP1826T-3302E_DC U4
+U 1 1 61D38D8F
+P 9150 14050
+F 0 "U4" H 9125 14415 50  0000 C CNN
+F 1 "MCP1826T-3302E_DC" H 9125 14324 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-6_TabPin3" H 9000 14150 50  0001 C CNN
+F 3 "https://ww1.microchip.com/downloads/en/DeviceDoc/22057B.pdf" H 9000 14150 50  0001 C CNN
+F 4 "Microchip Technology" H 9000 14050 50  0001 C CNN "Manufacturer"
+F 5 "Ologic" H 9000 14050 50  0001 C CNN "Part Number"
+	1    9150 14050
+	1    0    0    -1  
+$EndComp
+Text Notes 7700 13450 0    200  ~ 40
+5V to 3.3V 1A LDO
+Text Notes 1700 12100 0    200  ~ 40
+2.5mm DC Jack
+$Comp
+L personal_bjt:BC846W,115 Q2
+U 1 1 61D4FC45
+P 10050 3250
+F 0 "Q2" H 10241 3204 50  0000 L CNN
+F 1 "BC846W,115" H 10241 3295 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-323_SC-70" H 10250 3350 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/BC846_SER.pdf" H 10050 3250 50  0001 C CNN
+F 4 "Nexperia USA Inc." H 10050 3250 50  0001 C CNN "Manufacturer"
+F 5 "1727-4850-1-ND" H 10050 3250 50  0001 C CNN "Part Number"
+	1    10050 3250
+	1    0    0    1   
+$EndComp
+$Comp
+L personal_bjt:BC846W,115 Q1
+U 1 1 61D51718
+P 10050 2600
+F 0 "Q1" H 10241 2646 50  0000 L CNN
+F 1 "BC846W,115" H 10241 2555 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-323_SC-70" H 10250 2700 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/BC846_SER.pdf" H 10050 2600 50  0001 C CNN
+F 4 "Nexperia USA Inc." H 10050 2600 50  0001 C CNN "Manufacturer"
+F 5 "1727-4850-1-ND" H 10050 2600 50  0001 C CNN "Part Number"
+	1    10050 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_resistors:10k R3
+U 1 1 61D529B7
+P 9650 2600
+F 0 "R3" V 9600 2450 50  0000 C CNN
+F 1 "10k" V 9600 2750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 9650 2600 50  0001 C CNN
+F 3 "~" H 9650 2600 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 9650 2600 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402FT10K0CT-ND" H 9650 2600 50  0001 C CNN "Part Number"
+F 6 "0402" V 9700 2450 50  0000 C CNN "Size"
+	1    9650 2600
+	0    1    1    0   
+$EndComp
+$Comp
+L personal_resistors:10k R8
+U 1 1 61D54390
+P 9650 3250
+F 0 "R8" V 9600 3100 50  0000 C CNN
+F 1 "10k" V 9600 3400 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 9650 3250 50  0001 C CNN
+F 3 "~" H 9650 3250 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 9650 3250 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402FT10K0CT-ND" H 9650 3250 50  0001 C CNN "Part Number"
+F 6 "0402" V 9700 3100 50  0000 C CNN "Size"
+	1    9650 3250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9750 3250 9850 3250
+Wire Wire Line
+	9750 2600 9850 2600
+Wire Wire Line
+	10150 2800 10150 2950
+Wire Wire Line
+	9250 2950 9250 3250
+Wire Wire Line
+	9250 3250 9550 3250
+Wire Wire Line
+	9400 3050 9400 2600
+Wire Wire Line
+	9400 2600 9550 2600
+Connection ~ 9400 2600
+Connection ~ 9250 3250
+Wire Wire Line
+	8950 3250 9250 3250
+Wire Wire Line
+	9000 2600 9400 2600
+Text Label 9000 2600 0    50   ~ 0
+DTR
+Text Label 8950 3250 0    50   ~ 0
+RTS
+Text Label 10300 3550 0    50   ~ 0
+IO0
+Wire Wire Line
+	10150 3450 10150 3550
+Wire Wire Line
+	10150 3550 10450 3550
+Text Label 10200 2400 0    50   ~ 0
+ESP_EN
+Wire Wire Line
+	10150 2400 10500 2400
+Wire Wire Line
+	9250 2950 10150 2950
+Wire Wire Line
+	9400 3050 10150 3050
+Text Notes 8750 2150 0    200  ~ 40
+ESP Auto Reset
+$Comp
+L power:+12V #PWR052
+U 1 1 61DAF13E
+P 5600 12500
+F 0 "#PWR052" H 5600 12350 50  0001 C CNN
+F 1 "+12V" H 5615 12673 50  0000 C CNN
+F 2 "" H 5600 12500 50  0001 C CNN
+F 3 "" H 5600 12500 50  0001 C CNN
+	1    5600 12500
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:10uF C32
+U 1 1 61DB12AB
+P 2750 12700
+F 0 "C32" H 2842 12837 50  0000 L CNN
+F 1 "10uF" H 2842 12746 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2750 12700 50  0001 C CNN
+F 3 "~" H 2750 12700 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 2750 12700 50  0001 C CNN "Manufacturer"
+F 5 "1276-2893-1-ND" H 2750 12700 50  0001 C CNN "Part Number"
+F 6 "0805" H 2842 12655 50  0000 L CNN "Size"
+F 7 "16V" H 2842 12564 50  0000 L CNN "Voltage"
+	1    2750 12700
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:10uF C33
+U 1 1 61DB1852
+P 3100 12700
+F 0 "C33" H 3192 12837 50  0000 L CNN
+F 1 "10uF" H 3192 12746 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 3100 12700 50  0001 C CNN
+F 3 "~" H 3100 12700 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 3100 12700 50  0001 C CNN "Manufacturer"
+F 5 "1276-2893-1-ND" H 3100 12700 50  0001 C CNN "Part Number"
+F 6 "0805" H 3192 12655 50  0000 L CNN "Size"
+F 7 "16V" H 3192 12564 50  0000 L CNN "Voltage"
+	1    3100 12700
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:10uF C34
+U 1 1 61DB2092
+P 3450 12700
+F 0 "C34" H 3542 12837 50  0000 L CNN
+F 1 "10uF" H 3542 12746 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 3450 12700 50  0001 C CNN
+F 3 "~" H 3450 12700 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 3450 12700 50  0001 C CNN "Manufacturer"
+F 5 "1276-2893-1-ND" H 3450 12700 50  0001 C CNN "Part Number"
+F 6 "0805" H 3542 12655 50  0000 L CNN "Size"
+F 7 "16V" H 3542 12564 50  0000 L CNN "Voltage"
+	1    3450 12700
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:10uF C35
+U 1 1 61DB262F
+P 3800 12700
+F 0 "C35" H 3892 12837 50  0000 L CNN
+F 1 "10uF" H 3892 12746 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 3800 12700 50  0001 C CNN
+F 3 "~" H 3800 12700 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 3800 12700 50  0001 C CNN "Manufacturer"
+F 5 "1276-2893-1-ND" H 3800 12700 50  0001 C CNN "Part Number"
+F 6 "0805" H 3892 12655 50  0000 L CNN "Size"
+F 7 "16V" H 3892 12564 50  0000 L CNN "Voltage"
+	1    3800 12700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 12600 2750 12500
+Wire Wire Line
+	3800 12500 3800 12600
+Wire Wire Line
+	3450 12600 3450 12500
+Wire Wire Line
+	3100 12600 3100 12500
+$Comp
+L power:GND #PWR055
+U 1 1 61DC3022
+P 2850 12900
+F 0 "#PWR055" H 2850 12650 50  0001 C CNN
+F 1 "GND" H 2855 12727 50  0001 C CNN
+F 2 "" H 2850 12900 50  0001 C CNN
+F 3 "" H 2850 12900 50  0001 C CNN
+	1    2850 12900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 12800 2750 12900
+Wire Wire Line
+	3800 12900 3800 12800
+Connection ~ 2850 12900
+Wire Wire Line
+	3450 12800 3450 12900
+Wire Wire Line
+	3100 12800 3100 12900
+$Comp
+L power:GND #PWR054
+U 1 1 61DDCC0A
+P 2200 12750
+F 0 "#PWR054" H 2200 12500 50  0001 C CNN
+F 1 "GND" H 2205 12577 50  0001 C CNN
+F 2 "" H 2200 12750 50  0001 C CNN
+F 3 "" H 2200 12750 50  0001 C CNN
+	1    2200 12750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2150 12700 2200 12700
+Wire Wire Line
+	2200 12700 2200 12750
+$Comp
+L personal_capacitors:0.1uF C4
+U 1 1 61E95E61
+P 3000 1950
+F 0 "C4" H 3092 2087 50  0000 L CNN
+F 1 "0.1uF" H 3092 1996 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 3000 1950 50  0001 C CNN
+F 3 "~" H 3000 1950 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 3000 1950 50  0001 C CNN "Manufacturer"
+F 5 "1276-1043-1-ND" H 3000 1950 50  0001 C CNN "Part Number"
+F 6 "0402" H 3092 1905 50  0000 L CNN "Size"
+F 7 "25V" H 3092 1814 50  0000 L CNN "Voltage"
+	1    3000 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:2.2uF C2
+U 1 1 61E97F7E
+P 2300 1950
+F 0 "C2" H 2392 2087 50  0000 L CNN
+F 1 "2.2uF" H 2392 1996 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2300 1950 50  0001 C CNN
+F 3 "~" H 2300 1950 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 2300 1950 50  0001 C CNN "Manufacturer"
+F 5 "1276-1085-1-ND" H 2300 1950 50  0001 C CNN "Part Number"
+F 6 "0603" H 2392 1905 50  0000 L CNN "Size"
+F 7 "10V" H 2392 1814 50  0000 L CNN "Voltage"
+	1    2300 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:2.2uF C3
+U 1 1 61E9882A
+P 2650 1950
+F 0 "C3" H 2742 2087 50  0000 L CNN
+F 1 "2.2uF" H 2742 1996 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2650 1950 50  0001 C CNN
+F 3 "~" H 2650 1950 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 2650 1950 50  0001 C CNN "Manufacturer"
+F 5 "1276-1085-1-ND" H 2650 1950 50  0001 C CNN "Part Number"
+F 6 "0603" H 2742 1905 50  0000 L CNN "Size"
+F 7 "10V" H 2742 1814 50  0000 L CNN "Voltage"
+	1    2650 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:0.1uF C5
+U 1 1 61E99DD4
+P 3350 1950
+F 0 "C5" H 3442 2087 50  0000 L CNN
+F 1 "0.1uF" H 3442 1996 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 3350 1950 50  0001 C CNN
+F 3 "~" H 3350 1950 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 3350 1950 50  0001 C CNN "Manufacturer"
+F 5 "1276-1043-1-ND" H 3350 1950 50  0001 C CNN "Part Number"
+F 6 "0402" H 3442 1905 50  0000 L CNN "Size"
+F 7 "25V" H 3442 1814 50  0000 L CNN "Voltage"
+	1    3350 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:0.1uF C6
+U 1 1 61E9A62F
+P 3700 1950
+F 0 "C6" H 3792 2087 50  0000 L CNN
+F 1 "0.1uF" H 3792 1996 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 3700 1950 50  0001 C CNN
+F 3 "~" H 3700 1950 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 3700 1950 50  0001 C CNN "Manufacturer"
+F 5 "1276-1043-1-ND" H 3700 1950 50  0001 C CNN "Part Number"
+F 6 "0402" H 3792 1905 50  0000 L CNN "Size"
+F 7 "25V" H 3792 1814 50  0000 L CNN "Voltage"
+	1    3700 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR01
+U 1 1 61EA3E2B
+P 2200 1750
+F 0 "#PWR01" H 2200 1600 50  0001 C CNN
+F 1 "+3.3V" H 2215 1923 50  0000 C CNN
+F 2 "" H 2200 1750 50  0001 C CNN
+F 3 "" H 2200 1750 50  0001 C CNN
+	1    2200 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 1850 1950 1750
+Wire Wire Line
+	1950 1750 2200 1750
+Wire Wire Line
+	3700 1750 3700 1850
+Connection ~ 2200 1750
+Wire Wire Line
+	2200 1750 2300 1750
+Wire Wire Line
+	3350 1850 3350 1750
+Connection ~ 3350 1750
+Wire Wire Line
+	3350 1750 3700 1750
+Wire Wire Line
+	3000 1850 3000 1750
+Connection ~ 3000 1750
+Wire Wire Line
+	3000 1750 3350 1750
+Wire Wire Line
+	2650 1850 2650 1750
+Connection ~ 2650 1750
+Wire Wire Line
+	2650 1750 3000 1750
+Wire Wire Line
+	2300 1850 2300 1750
+Connection ~ 2300 1750
+Wire Wire Line
+	2300 1750 2650 1750
+$Comp
+L power:GND #PWR02
+U 1 1 61EE10E7
+P 2700 2150
+F 0 "#PWR02" H 2700 1900 50  0001 C CNN
+F 1 "GND" H 2705 1977 50  0001 C CNN
+F 2 "" H 2700 2150 50  0001 C CNN
+F 3 "" H 2700 2150 50  0001 C CNN
+	1    2700 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 2050 1950 2150
+Wire Wire Line
+	1950 2150 2300 2150
+Wire Wire Line
+	3700 2150 3700 2050
+Connection ~ 2700 2150
+Wire Wire Line
+	2700 2150 3000 2150
+Wire Wire Line
+	3350 2050 3350 2150
+Connection ~ 3350 2150
+Wire Wire Line
+	3350 2150 3700 2150
+Wire Wire Line
+	3000 2050 3000 2150
+Connection ~ 3000 2150
+Wire Wire Line
+	3000 2150 3350 2150
+Wire Wire Line
+	2650 2050 2650 2150
+Connection ~ 2650 2150
+Wire Wire Line
+	2650 2150 2700 2150
+Wire Wire Line
+	2300 2050 2300 2150
+Connection ~ 2300 2150
+Wire Wire Line
+	2300 2150 2650 2150
+Wire Wire Line
+	3700 1750 4050 1750
+Connection ~ 3700 1750
+Wire Wire Line
+	4050 1750 4050 1850
+Wire Wire Line
+	4050 1750 4100 1750
+Connection ~ 4050 1750
+Wire Wire Line
+	4100 1850 4050 1850
+Connection ~ 4050 1850
+Wire Wire Line
+	4050 1850 4050 1950
+Wire Wire Line
+	4100 1950 4050 1950
+Connection ~ 4050 1950
+Wire Wire Line
+	4050 1950 4050 2050
+Wire Wire Line
+	4100 2050 4050 2050
+Connection ~ 4050 2050
+Wire Wire Line
+	4050 2050 4050 2150
+Wire Wire Line
+	4100 2150 4050 2150
+Connection ~ 4050 2150
+Wire Wire Line
+	4050 2150 4050 2250
+Wire Wire Line
+	4100 2250 4050 2250
+Connection ~ 4050 2250
+Wire Wire Line
+	4050 2250 4050 2350
+Wire Wire Line
+	4100 2350 4050 2350
+Connection ~ 4050 2350
+Wire Wire Line
+	4050 2350 4050 2450
+Wire Wire Line
+	4100 2450 4050 2450
+Text Label 3800 3100 0    50   ~ 0
+ESP_EN
+$Comp
+L personal_switch:FSM2JSMAA SW3
+U 1 1 61F9B635
+P 2200 3100
+F 0 "SW3" H 2200 3485 50  0000 C CNN
+F 1 "FSM2JSMAA" H 2200 3394 50  0000 C CNN
+F 2 "personal:SW_2-1437565-8" H 2200 3400 50  0001 C CNN
+F 3 "http://www.apem.com/int/index.php?controller=attachment&id_attachment=1371" H 2200 3400 50  0001 C CNN
+F 4 "FSM2JSMAA" H 2000 3500 50  0001 C CNN "Manufacturer"
+F 5 "450-3355-ND" H 2050 3600 50  0001 C CNN "Part Number"
+F 6 "DNP" H 1950 3300 50  0000 C CNN "DNP"
+	1    2200 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR05
+U 1 1 61FA8D87
+P 2800 2750
+F 0 "#PWR05" H 2800 2600 50  0001 C CNN
+F 1 "+3.3V" H 2815 2923 50  0000 C CNN
+F 2 "" H 2800 2750 50  0001 C CNN
+F 3 "" H 2800 2750 50  0001 C CNN
+	1    2800 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 3000 2600 3100
+Wire Wire Line
+	2600 2750 2600 2800
+Wire Wire Line
+	2400 3000 2400 3100
+Connection ~ 2400 3100
+$Comp
+L power:GND #PWR09
+U 1 1 61FDA32C
+P 1950 3150
+F 0 "#PWR09" H 1950 2900 50  0001 C CNN
+F 1 "GND" H 1955 2977 50  0001 C CNN
+F 2 "" H 1950 3150 50  0001 C CNN
+F 3 "" H 1950 3150 50  0001 C CNN
+	1    1950 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2000 3000 1950 3000
+Wire Wire Line
+	1950 3000 1950 3100
+Wire Wire Line
+	2000 3100 1950 3100
+Wire Wire Line
+	1950 3100 1950 3150
+Connection ~ 1950 3100
+NoConn ~ 4100 3600
+$Comp
+L personal_switch:FSM2JSMAA SW4
+U 1 1 61FFEF69
+P 1700 3600
+F 0 "SW4" H 1700 3985 50  0000 C CNN
+F 1 "FSM2JSMAA" H 1700 3894 50  0000 C CNN
+F 2 "personal:SW_2-1437565-8" H 1700 3900 50  0001 C CNN
+F 3 "http://www.apem.com/int/index.php?controller=attachment&id_attachment=1371" H 1700 3900 50  0001 C CNN
+F 4 "FSM2JSMAA" H 1500 4000 50  0001 C CNN "Manufacturer"
+F 5 "450-3355-ND" H 1550 4100 50  0001 C CNN "Part Number"
+F 6 "DNP" H 1450 3800 50  0000 C CNN "DNP"
+	1    1700 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 3500 1450 3500
+Wire Wire Line
+	1450 3500 1450 3600
+Wire Wire Line
+	1500 3600 1450 3600
+Connection ~ 1450 3600
+Wire Wire Line
+	1900 3600 1900 3500
+Text Label 3800 3500 0    50   ~ 0
+IO0
+Connection ~ 2600 3100
+Wire Wire Line
+	2600 3100 2550 3100
+$Comp
+L personal_resistors:4.7k R5
+U 1 1 6203036D
+P 2950 2900
+F 0 "R5" H 3018 2991 50  0000 L CNN
+F 1 "4.7k" H 3018 2900 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 2950 2900 50  0001 C CNN
+F 3 "~" H 2950 2900 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 2950 2900 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402FT4K70CT-ND" H 2950 2900 50  0001 C CNN "Part Number"
+F 6 "0402" H 3018 2809 50  0000 L CNN "Size"
+	1    2950 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 3000 2950 3500
+Connection ~ 2950 3500
+Wire Wire Line
+	2950 2800 2950 2750
+Wire Wire Line
+	2950 2750 2800 2750
+Connection ~ 2800 2750
+Wire Wire Line
+	2800 2750 2600 2750
+Text Notes 1450 3100 0    100  ~ 20
+Reset
+Text Notes 950  3600 0    100  ~ 20
+Boot
+NoConn ~ 4100 4300
+NoConn ~ 4100 4400
+NoConn ~ 5900 2900
+NoConn ~ 5900 3000
+NoConn ~ 5900 2400
+NoConn ~ 5900 2500
+NoConn ~ 4100 3900
+NoConn ~ 4100 4200
+Connection ~ 1900 3500
+Wire Wire Line
+	1900 3500 2150 3500
+$Comp
+L power:GND #PWR011
+U 1 1 61FFFEF3
+P 1450 3600
+F 0 "#PWR011" H 1450 3350 50  0001 C CNN
+F 1 "GND" H 1455 3427 50  0001 C CNN
+F 2 "" H 1450 3600 50  0001 C CNN
+F 3 "" H 1450 3600 50  0001 C CNN
+	1    1450 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:0.1uF C14
+U 1 1 620D8056
+P 2150 3700
+F 0 "C14" H 2242 3837 50  0000 L CNN
+F 1 "0.1uF" H 2242 3746 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 2150 3700 50  0001 C CNN
+F 3 "~" H 2150 3700 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 2150 3700 50  0001 C CNN "Manufacturer"
+F 5 "1276-1043-1-ND" H 2150 3700 50  0001 C CNN "Part Number"
+F 6 "0402" H 2242 3655 50  0000 L CNN "Size"
+F 7 "25V" H 2242 3564 50  0000 L CNN "Voltage"
+	1    2150 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR014
+U 1 1 620D9749
+P 2400 3900
+F 0 "#PWR014" H 2400 3650 50  0001 C CNN
+F 1 "GND" H 2405 3727 50  0001 C CNN
+F 2 "" H 2400 3900 50  0001 C CNN
+F 3 "" H 2400 3900 50  0001 C CNN
+	1    2400 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2150 3600 2150 3500
+Connection ~ 2150 3500
+Wire Wire Line
+	2150 3500 2950 3500
+Wire Wire Line
+	2550 3600 2550 3100
+Connection ~ 2550 3100
+Wire Wire Line
+	2550 3100 2400 3100
+Wire Wire Line
+	2150 3900 2400 3900
+Wire Wire Line
+	2550 3900 2550 3800
+Wire Wire Line
+	2150 3800 2150 3900
+Connection ~ 2400 3900
+Wire Wire Line
+	2400 3900 2550 3900
+NoConn ~ 5900 2600
+NoConn ~ 5900 2700
+$Comp
+L personal:PEC11R-4020F-S0024 SW5
+U 1 1 62141EF7
+P 20600 4400
+F 0 "SW5" H 20600 4767 50  0000 C CNN
+F 1 "PEC11R-4020F-S0024" H 20600 4676 50  0000 C CNN
+F 2 "personal:PEC11R-4020F-S0024" H 20600 4850 50  0001 C CNN
+F 3 "https://www.bourns.com/docs/Product-Datasheets/PEC11R.pdf" H 20600 4660 50  0001 C CNN
+F 4 "Bourns Inc." H 20200 5050 50  0001 C CNN "Manufacturer"
+F 5 "PEC11R-4020F-S0024-ND" H 20500 4950 50  0001 C CNN "Part Number"
+	1    20600 4400
+	1    0    0    -1  
+$EndComp
+Text Notes 19950 3950 0    100  ~ 20
+Brightness Encoder
+$Comp
+L personal_capacitors:0.1uF C36
+U 1 1 6217C291
+P 1950 13150
+F 0 "C36" H 2042 13287 50  0000 L CNN
+F 1 "0.1uF" H 2042 13196 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 1950 13150 50  0001 C CNN
+F 3 "~" H 1950 13150 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 1950 13150 50  0001 C CNN "Manufacturer"
+F 5 "1276-1043-1-ND" H 1950 13150 50  0001 C CNN "Part Number"
+F 6 "0402" H 2042 13105 50  0000 L CNN "Size"
+F 7 "25V" H 2042 13014 50  0000 L CNN "Voltage"
+	1    1950 13150
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_resistors:330 R28
+U 1 1 6217C29A
+P 1650 13150
+F 0 "R28" H 1718 13241 50  0000 L CNN
+F 1 "330" H 1718 13150 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 1650 13150 50  0001 C CNN
+F 3 "~" H 1650 13150 50  0001 C CNN
+F 4 "YAGEO" H 1650 13150 50  0001 C CNN "Manufacturer"
+F 5 "311-330LRCT-ND" H 1650 13150 50  0001 C CNN "Part Number"
+F 6 "0402" H 1718 13059 50  0000 L CNN "Size"
+	1    1650 13150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR057
+U 1 1 621DED11
+P 1800 13300
+F 0 "#PWR057" H 1800 13050 50  0001 C CNN
+F 1 "GND" H 1805 13127 50  0001 C CNN
+F 2 "" H 1800 13300 50  0001 C CNN
+F 3 "" H 1800 13300 50  0001 C CNN
+	1    1800 13300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 13250 1650 13300
+Wire Wire Line
+	1650 13300 1800 13300
+Wire Wire Line
+	1950 13300 1950 13250
+Connection ~ 1800 13300
+Wire Wire Line
+	1800 13300 1950 13300
+$Comp
+L power:GND #PWR021
+U 1 1 6222605A
+P 20600 4750
+F 0 "#PWR021" H 20600 4500 50  0001 C CNN
+F 1 "GND" H 20605 4577 50  0001 C CNN
+F 2 "" H 20600 4750 50  0001 C CNN
+F 3 "" H 20600 4750 50  0001 C CNN
+	1    20600 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	20550 4700 20550 4750
+Wire Wire Line
+	20550 4750 20600 4750
+Wire Wire Line
+	20650 4750 20650 4700
+Connection ~ 20600 4750
+Wire Wire Line
+	20600 4750 20650 4750
+$Comp
+L personal_resistors:4.7k R11
+U 1 1 62235495
+P 21000 4650
+F 0 "R11" H 21068 4741 50  0000 L CNN
+F 1 "4.7k" H 21068 4650 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 21000 4650 50  0001 C CNN
+F 3 "~" H 21000 4650 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 21000 4650 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402FT4K70CT-ND" H 21000 4650 50  0001 C CNN "Part Number"
+F 6 "0402" H 21068 4559 50  0000 L CNN "Size"
+	1    21000 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	20900 4500 21000 4500
+Wire Wire Line
+	21000 4500 21000 4550
+Wire Wire Line
+	21000 4500 21450 4500
+Connection ~ 21000 4500
+$Comp
+L power:GND #PWR022
+U 1 1 6225200F
+P 21000 4750
+F 0 "#PWR022" H 21000 4500 50  0001 C CNN
+F 1 "GND" H 21005 4577 50  0001 C CNN
+F 2 "" H 21000 4750 50  0001 C CNN
+F 3 "" H 21000 4750 50  0001 C CNN
+	1    21000 4750
+	1    0    0    -1  
+$EndComp
+Text Label 21000 4500 0    50   ~ 0
+ENC_SWITCH
+$Comp
+L power:+3.3V #PWR016
+U 1 1 62252F37
+P 21200 4300
+F 0 "#PWR016" H 21200 4150 50  0001 C CNN
+F 1 "+3.3V" H 21215 4473 50  0000 C CNN
+F 2 "" H 21200 4300 50  0001 C CNN
+F 3 "" H 21200 4300 50  0001 C CNN
+	1    21200 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	20900 4300 21200 4300
+Text Label 5950 3700 0    50   ~ 0
+ENC_SWITCH
+$Comp
+L power:+3.3V #PWR013
+U 1 1 622704BC
+P 19450 3800
+F 0 "#PWR013" H 19450 3650 50  0001 C CNN
+F 1 "+3.3V" H 19465 3973 50  0000 C CNN
+F 2 "" H 19450 3800 50  0001 C CNN
+F 3 "" H 19450 3800 50  0001 C CNN
+	1    19450 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_resistors:10k R9
+U 1 1 62275A2A
+P 19450 3900
+F 0 "R9" H 19518 3991 50  0000 L CNN
+F 1 "10k" H 19518 3900 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 19450 3900 50  0001 C CNN
+F 3 "~" H 19450 3900 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 19450 3900 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402FT10K0CT-ND" H 19450 3900 50  0001 C CNN "Part Number"
+F 6 "0402" H 19518 3809 50  0000 L CNN "Size"
+	1    19450 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:0.01uF C16
+U 1 1 622A0709
+P 19200 4250
+F 0 "C16" H 19292 4387 50  0000 L CNN
+F 1 "0.01uF" H 19292 4296 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 19200 4250 50  0001 C CNN
+F 3 "~" H 19200 4250 50  0001 C CNN
+F 4 "KYOCERA AVX" H 19200 4250 50  0001 C CNN "Manufacturer"
+F 5 "478-0402YD103KAT2ACT-ND" H 19200 4250 50  0001 C CNN "Part Number"
+F 6 "0402" H 19292 4205 50  0000 L CNN "Size"
+F 7 "16V" H 19292 4114 50  0000 L CNN "Voltage"
+	1    19200 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_resistors:10k R10
+U 1 1 62271E0E
+P 18950 4050
+F 0 "R10" V 18900 3900 50  0000 C CNN
+F 1 "10k" V 18900 4200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 18950 4050 50  0001 C CNN
+F 3 "~" H 18950 4050 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 18950 4050 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402FT10K0CT-ND" H 18950 4050 50  0001 C CNN "Part Number"
+F 6 "0402" V 19000 3900 50  0000 C CNN "Size"
+	1    18950 4050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	19050 4050 19200 4050
+Wire Wire Line
+	19200 4150 19200 4050
+Connection ~ 19200 4050
+Wire Wire Line
+	19200 4050 19450 4050
+$Comp
+L power:GND #PWR017
+U 1 1 622E2730
+P 19200 4350
+F 0 "#PWR017" H 19200 4100 50  0001 C CNN
+F 1 "GND" H 19205 4177 50  0001 C CNN
+F 2 "" H 19200 4350 50  0001 C CNN
+F 3 "" H 19200 4350 50  0001 C CNN
+	1    19200 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR018
+U 1 1 622F4513
+P 20250 4600
+F 0 "#PWR018" H 20250 4350 50  0001 C CNN
+F 1 "GND" H 20255 4427 50  0001 C CNN
+F 2 "" H 20250 4600 50  0001 C CNN
+F 3 "" H 20250 4600 50  0001 C CNN
+	1    20250 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	20300 4400 20250 4400
+Wire Wire Line
+	20250 4400 20250 4600
+Wire Wire Line
+	19450 4050 19450 4000
+Wire Wire Line
+	19450 4050 19800 4050
+Wire Wire Line
+	19800 4050 19800 4300
+Wire Wire Line
+	19800 4300 20300 4300
+Connection ~ 19450 4050
+$Comp
+L power:+3.3V #PWR019
+U 1 1 6232DFF7
+P 19450 4700
+F 0 "#PWR019" H 19450 4550 50  0001 C CNN
+F 1 "+3.3V" H 19465 4873 50  0000 C CNN
+F 2 "" H 19450 4700 50  0001 C CNN
+F 3 "" H 19450 4700 50  0001 C CNN
+	1    19450 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_resistors:10k R12
+U 1 1 6232E000
+P 19450 4800
+F 0 "R12" H 19518 4891 50  0000 L CNN
+F 1 "10k" H 19518 4800 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 19450 4800 50  0001 C CNN
+F 3 "~" H 19450 4800 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 19450 4800 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402FT10K0CT-ND" H 19450 4800 50  0001 C CNN "Part Number"
+F 6 "0402" H 19518 4709 50  0000 L CNN "Size"
+	1    19450 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:0.01uF C17
+U 1 1 6232E00A
+P 19200 5150
+F 0 "C17" H 19292 5287 50  0000 L CNN
+F 1 "0.01uF" H 19292 5196 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 19200 5150 50  0001 C CNN
+F 3 "~" H 19200 5150 50  0001 C CNN
+F 4 "KYOCERA AVX" H 19200 5150 50  0001 C CNN "Manufacturer"
+F 5 "478-0402YD103KAT2ACT-ND" H 19200 5150 50  0001 C CNN "Part Number"
+F 6 "0402" H 19292 5105 50  0000 L CNN "Size"
+F 7 "16V" H 19292 5014 50  0000 L CNN "Voltage"
+	1    19200 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_resistors:10k R13
+U 1 1 6232E013
+P 18950 4950
+F 0 "R13" V 18900 4800 50  0000 C CNN
+F 1 "10k" V 18900 5100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 18950 4950 50  0001 C CNN
+F 3 "~" H 18950 4950 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 18950 4950 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402FT10K0CT-ND" H 18950 4950 50  0001 C CNN "Part Number"
+F 6 "0402" V 19000 4800 50  0000 C CNN "Size"
+	1    18950 4950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	19050 4950 19200 4950
+Wire Wire Line
+	19200 5050 19200 4950
+Connection ~ 19200 4950
+Wire Wire Line
+	19200 4950 19450 4950
+$Comp
+L power:GND #PWR023
+U 1 1 6232E01D
+P 19200 5250
+F 0 "#PWR023" H 19200 5000 50  0001 C CNN
+F 1 "GND" H 19205 5077 50  0001 C CNN
+F 2 "" H 19200 5250 50  0001 C CNN
+F 3 "" H 19200 5250 50  0001 C CNN
+	1    19200 5250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	19450 4950 19450 4900
+Wire Wire Line
+	19450 4950 19800 4950
+Connection ~ 19450 4950
+Wire Wire Line
+	19800 4950 19800 4500
+Wire Wire Line
+	19800 4500 20300 4500
+Text Label 18500 4050 0    50   ~ 0
+ENC_A
+Wire Wire Line
+	18500 4050 18850 4050
+Text Label 18500 4950 0    50   ~ 0
+ENC_B
+Wire Wire Line
+	18500 4950 18850 4950
+Text Label 5950 3600 0    50   ~ 0
+ENC_B
+Text Label 5950 3500 0    50   ~ 0
+ENC_A
+$Comp
+L personal_resistors:4.7k R7
+U 1 1 6240DC1B
+P 20450 2900
+F 0 "R7" H 20518 2991 50  0000 L CNN
+F 1 "4.7k" H 20518 2900 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 20450 2900 50  0001 C CNN
+F 3 "~" H 20450 2900 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 20450 2900 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402FT4K70CT-ND" H 20450 2900 50  0001 C CNN "Part Number"
+F 6 "0402" H 20518 2809 50  0000 L CNN "Size"
+	1    20450 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR04
+U 1 1 6242E7C3
+P 21650 2700
+F 0 "#PWR04" H 21650 2550 50  0001 C CNN
+F 1 "+3.3V" H 21665 2873 50  0000 C CNN
+F 2 "" H 21650 2700 50  0001 C CNN
+F 3 "" H 21650 2700 50  0001 C CNN
+	1    21650 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	21500 2800 21550 2800
+Wire Wire Line
+	21550 2800 21550 2700
+Wire Wire Line
+	21550 2700 21500 2700
+Wire Wire Line
+	21550 2700 21650 2700
+Connection ~ 21550 2700
+$Comp
+L personal_capacitors:0.1uF C8
+U 1 1 62468C75
+P 20800 2900
+F 0 "C8" H 20892 3037 50  0000 L CNN
+F 1 "0.1uF" H 20892 2946 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 20800 2900 50  0001 C CNN
+F 3 "~" H 20800 2900 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 20800 2900 50  0001 C CNN "Manufacturer"
+F 5 "1276-1043-1-ND" H 20800 2900 50  0001 C CNN "Part Number"
+F 6 "0402" H 20892 2855 50  0000 L CNN "Size"
+F 7 "25V" H 20892 2764 50  0000 L CNN "Voltage"
+	1    20800 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	21100 2800 21100 2700
+Wire Wire Line
+	21100 2700 20800 2700
+Connection ~ 21100 2700
+Wire Wire Line
+	20450 2800 20450 2700
+Wire Wire Line
+	20800 2700 20800 2800
+Connection ~ 20800 2700
+Wire Wire Line
+	20800 2700 20450 2700
+$Comp
+L power:GND #PWR08
+U 1 1 624E3102
+P 20650 3050
+F 0 "#PWR08" H 20650 2800 50  0001 C CNN
+F 1 "GND" H 20655 2877 50  0001 C CNN
+F 2 "" H 20650 3050 50  0001 C CNN
+F 3 "" H 20650 3050 50  0001 C CNN
+	1    20650 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	20450 3000 20450 3050
+Wire Wire Line
+	20450 3050 20650 3050
+Wire Wire Line
+	20800 3050 20800 3000
+Connection ~ 20650 3050
+Wire Wire Line
+	20650 3050 20800 3050
+$Comp
+L personal_switch:FSM2JSMAA SW1
+U 1 1 6251775A
+P 19800 2800
+F 0 "SW1" H 19800 3185 50  0000 C CNN
+F 1 "FSM2JSMAA" H 19800 3094 50  0000 C CNN
+F 2 "personal:SW_2-1437565-8" H 19800 3100 50  0001 C CNN
+F 3 "http://www.apem.com/int/index.php?controller=attachment&id_attachment=1371" H 19800 3100 50  0001 C CNN
+F 4 "FSM2JSMAA" H 19600 3200 50  0001 C CNN "Manufacturer"
+F 5 "450-3355-ND" H 19650 3300 50  0001 C CNN "Part Number"
+	1    19800 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_resistors:4.7k R6
+U 1 1 62517763
+P 18950 2900
+F 0 "R6" H 19018 2991 50  0000 L CNN
+F 1 "4.7k" H 19018 2900 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 18950 2900 50  0001 C CNN
+F 3 "~" H 18950 2900 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 18950 2900 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402FT4K70CT-ND" H 18950 2900 50  0001 C CNN "Part Number"
+F 6 "0402" H 19018 2809 50  0000 L CNN "Size"
+	1    18950 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR03
+U 1 1 62517769
+P 20150 2700
+F 0 "#PWR03" H 20150 2550 50  0001 C CNN
+F 1 "+3.3V" H 20165 2873 50  0000 C CNN
+F 2 "" H 20150 2700 50  0001 C CNN
+F 3 "" H 20150 2700 50  0001 C CNN
+	1    20150 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	20000 2800 20050 2800
+Wire Wire Line
+	20050 2800 20050 2700
+Wire Wire Line
+	20050 2700 20000 2700
+Wire Wire Line
+	20050 2700 20150 2700
+Connection ~ 20050 2700
+$Comp
+L personal_capacitors:0.1uF C7
+U 1 1 62517778
+P 19300 2900
+F 0 "C7" H 19392 3037 50  0000 L CNN
+F 1 "0.1uF" H 19392 2946 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 19300 2900 50  0001 C CNN
+F 3 "~" H 19300 2900 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 19300 2900 50  0001 C CNN "Manufacturer"
+F 5 "1276-1043-1-ND" H 19300 2900 50  0001 C CNN "Part Number"
+F 6 "0402" H 19392 2855 50  0000 L CNN "Size"
+F 7 "25V" H 19392 2764 50  0000 L CNN "Voltage"
+	1    19300 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	19600 2800 19600 2700
+Wire Wire Line
+	19600 2700 19300 2700
+Connection ~ 19600 2700
+Wire Wire Line
+	18950 2800 18950 2700
+Wire Wire Line
+	19300 2700 19300 2800
+Connection ~ 19300 2700
+Wire Wire Line
+	19300 2700 18950 2700
+$Comp
+L power:GND #PWR07
+U 1 1 62517785
+P 19150 3050
+F 0 "#PWR07" H 19150 2800 50  0001 C CNN
+F 1 "GND" H 19155 2877 50  0001 C CNN
+F 2 "" H 19150 3050 50  0001 C CNN
+F 3 "" H 19150 3050 50  0001 C CNN
+	1    19150 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	18950 3000 18950 3050
+Wire Wire Line
+	18950 3050 19150 3050
+Wire Wire Line
+	19300 3050 19300 3000
+Connection ~ 19150 3050
+Wire Wire Line
+	19150 3050 19300 3050
+Text Label 18950 2700 0    50   ~ 0
+BOT_SWITCH
+Text Label 20450 2700 0    50   ~ 0
+TOP_SWITCH
+Text Label 3500 2700 0    50   ~ 0
+TOP_SWITCH
+Text Label 3500 2600 0    50   ~ 0
+BOT_SWITCH
+Text Notes 19200 2250 0    100  ~ 20
+Left Switch
+Text Notes 20700 2250 0    100  ~ 20
+Right Switch
+Text Notes 12800 2350 0    200  ~ 40
+Light Board Connector
+$Comp
+L power:GND #PWR015
+U 1 1 625EF95D
+P 15350 3900
+F 0 "#PWR015" H 15350 3650 50  0001 C CNN
+F 1 "GND" H 15355 3727 50  0001 C CNN
+F 2 "" H 15350 3900 50  0001 C CNN
+F 3 "" H 15350 3900 50  0001 C CNN
+	1    15350 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR06
+U 1 1 625F25C3
+P 14250 2850
+F 0 "#PWR06" H 14250 2700 50  0001 C CNN
+F 1 "+5V" H 14150 3000 50  0000 L CNN
+F 2 "" H 14250 2850 50  0001 C CNN
+F 3 "" H 14250 2850 50  0001 C CNN
+	1    14250 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:22uF C9
+U 1 1 626087DE
+P 13350 3050
+F 0 "C9" H 13442 3187 50  0000 L CNN
+F 1 "22uF" H 13442 3096 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 13350 3050 50  0001 C CNN
+F 3 "~" H 13350 3050 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 13350 3050 50  0001 C CNN "Manufacturer"
+F 5 "1276-1274-1-ND" H 13350 3050 50  0001 C CNN "Part Number"
+F 6 "0603" H 13442 3005 50  0000 L CNN "Size"
+F 7 "10V" H 13442 2914 50  0000 L CNN "Voltage"
+	1    13350 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:22uF C10
+U 1 1 6260945C
+P 13700 3050
+F 0 "C10" H 13792 3187 50  0000 L CNN
+F 1 "22uF" H 13792 3096 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 13700 3050 50  0001 C CNN
+F 3 "~" H 13700 3050 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 13700 3050 50  0001 C CNN "Manufacturer"
+F 5 "1276-1274-1-ND" H 13700 3050 50  0001 C CNN "Part Number"
+F 6 "0603" H 13792 3005 50  0000 L CNN "Size"
+F 7 "10V" H 13792 2914 50  0000 L CNN "Voltage"
+	1    13700 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:22uF C11
+U 1 1 6261C953
+P 14050 3050
+F 0 "C11" H 14142 3187 50  0000 L CNN
+F 1 "22uF" H 14142 3096 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 14050 3050 50  0001 C CNN
+F 3 "~" H 14050 3050 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 14050 3050 50  0001 C CNN "Manufacturer"
+F 5 "1276-1274-1-ND" H 14050 3050 50  0001 C CNN "Part Number"
+F 6 "0603" H 14142 3005 50  0000 L CNN "Size"
+F 7 "10V" H 14142 2914 50  0000 L CNN "Voltage"
+	1    14050 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:22uF C12
+U 1 1 6261D166
+P 14400 3050
+F 0 "C12" H 14492 3187 50  0000 L CNN
+F 1 "22uF" H 14492 3096 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 14400 3050 50  0001 C CNN
+F 3 "~" H 14400 3050 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 14400 3050 50  0001 C CNN "Manufacturer"
+F 5 "1276-1274-1-ND" H 14400 3050 50  0001 C CNN "Part Number"
+F 6 "0603" H 14492 3005 50  0000 L CNN "Size"
+F 7 "10V" H 14492 2914 50  0000 L CNN "Voltage"
+	1    14400 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:0.1uF C13
+U 1 1 626317B9
+P 14750 3050
+F 0 "C13" H 14842 3187 50  0000 L CNN
+F 1 "0.1uF" H 14842 3096 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 14750 3050 50  0001 C CNN
+F 3 "~" H 14750 3050 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 14750 3050 50  0001 C CNN "Manufacturer"
+F 5 "1276-1043-1-ND" H 14750 3050 50  0001 C CNN "Part Number"
+F 6 "0402" H 14842 3005 50  0000 L CNN "Size"
+F 7 "25V" H 14842 2914 50  0000 L CNN "Voltage"
+	1    14750 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	13350 2950 13350 2850
+Wire Wire Line
+	13350 2850 13700 2850
+Wire Wire Line
+	14750 2850 14750 2950
+Connection ~ 14250 2850
+Wire Wire Line
+	14250 2850 14400 2850
+Wire Wire Line
+	14400 2950 14400 2850
+Connection ~ 14400 2850
+Wire Wire Line
+	14400 2850 14750 2850
+Wire Wire Line
+	14050 2950 14050 2850
+Connection ~ 14050 2850
+Wire Wire Line
+	14050 2850 14250 2850
+Wire Wire Line
+	13700 2950 13700 2850
+Connection ~ 13700 2850
+Wire Wire Line
+	13700 2850 14050 2850
+$Comp
+L power:GND #PWR010
+U 1 1 62689902
+P 14000 3150
+F 0 "#PWR010" H 14000 2900 50  0001 C CNN
+F 1 "GND" H 14005 2977 50  0001 C CNN
+F 2 "" H 14000 3150 50  0001 C CNN
+F 3 "" H 14000 3150 50  0001 C CNN
+	1    14000 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	13350 3150 13700 3150
+Connection ~ 13700 3150
+Wire Wire Line
+	13700 3150 14000 3150
+Connection ~ 14000 3150
+Wire Wire Line
+	14000 3150 14050 3150
+Connection ~ 14050 3150
+Wire Wire Line
+	14050 3150 14400 3150
+Connection ~ 14400 3150
+Wire Wire Line
+	14400 3150 14750 3150
+Wire Wire Line
+	14750 2850 15100 2850
+Wire Wire Line
+	15100 2850 15100 3200
+Wire Wire Line
+	15100 3300 15150 3300
+Connection ~ 14750 2850
+Wire Wire Line
+	15150 3200 15100 3200
+Connection ~ 15100 3200
+Wire Wire Line
+	15100 3200 15100 3300
+$Comp
+L power:GND #PWR012
+U 1 1 626E3DC3
+P 15100 3700
+F 0 "#PWR012" H 15100 3450 50  0001 C CNN
+F 1 "GND" H 15105 3527 50  0001 C CNN
+F 2 "" H 15100 3700 50  0001 C CNN
+F 3 "" H 15100 3700 50  0001 C CNN
+	1    15100 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	15150 3600 15100 3600
+Wire Wire Line
+	15100 3600 15100 3700
+Wire Wire Line
+	15150 3700 15100 3700
+Connection ~ 15100 3700
+Text Notes 13650 2550 0    100  ~ 20
+High Current = 10A
+Wire Wire Line
+	15150 3400 14550 3400
+Wire Wire Line
+	15150 3500 14550 3500
+Text Label 14550 3400 0    50   ~ 0
+LED_DATA_IN
+Text Label 14550 3500 0    50   ~ 0
+LED_CLK_IN
+$Comp
+L personal_capacitors:2.2uF C37
+U 1 1 627D8930
+P 7450 14150
+F 0 "C37" H 7542 14287 50  0000 L CNN
+F 1 "2.2uF" H 7542 14196 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 7450 14150 50  0001 C CNN
+F 3 "~" H 7450 14150 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 7450 14150 50  0001 C CNN "Manufacturer"
+F 5 "1276-1085-1-ND" H 7450 14150 50  0001 C CNN "Part Number"
+F 6 "0603" H 7542 14105 50  0000 L CNN "Size"
+F 7 "10V" H 7542 14014 50  0000 L CNN "Voltage"
+	1    7450 14150
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:0.1uF C38
+U 1 1 627DA952
+P 7850 14150
+F 0 "C38" H 7942 14287 50  0000 L CNN
+F 1 "0.1uF" H 7942 14196 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 7850 14150 50  0001 C CNN
+F 3 "~" H 7850 14150 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 7850 14150 50  0001 C CNN "Manufacturer"
+F 5 "1276-1043-1-ND" H 7850 14150 50  0001 C CNN "Part Number"
+F 6 "0402" H 7942 14105 50  0000 L CNN "Size"
+F 7 "25V" H 7942 14014 50  0000 L CNN "Voltage"
+	1    7850 14150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 14050 7450 13950
+Wire Wire Line
+	7450 13950 7650 13950
+Wire Wire Line
+	7850 13950 7850 14050
+$Comp
+L personal_capacitors:2.2uF C39
+U 1 1 62829986
+P 10250 14150
+F 0 "C39" H 10342 14287 50  0000 L CNN
+F 1 "2.2uF" H 10342 14196 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 10250 14150 50  0001 C CNN
+F 3 "~" H 10250 14150 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 10250 14150 50  0001 C CNN "Manufacturer"
+F 5 "1276-1085-1-ND" H 10250 14150 50  0001 C CNN "Part Number"
+F 6 "0603" H 10342 14105 50  0000 L CNN "Size"
+F 7 "10V" H 10342 14014 50  0000 L CNN "Voltage"
+	1    10250 14150
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:2.2uF C40
+U 1 1 6282A665
+P 10650 14150
+F 0 "C40" H 10742 14287 50  0000 L CNN
+F 1 "2.2uF" H 10742 14196 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 10650 14150 50  0001 C CNN
+F 3 "~" H 10650 14150 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 10650 14150 50  0001 C CNN "Manufacturer"
+F 5 "1276-1085-1-ND" H 10650 14150 50  0001 C CNN "Part Number"
+F 6 "0603" H 10742 14105 50  0000 L CNN "Size"
+F 7 "10V" H 10742 14014 50  0000 L CNN "Voltage"
+	1    10650 14150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10650 13950 10650 14050
+Wire Wire Line
+	10250 14050 10250 13950
+Connection ~ 10250 13950
+Wire Wire Line
+	10250 13950 10450 13950
+$Comp
+L power:+3.3V #PWR060
+U 1 1 6287BACD
+P 10450 13950
+F 0 "#PWR060" H 10450 13800 50  0001 C CNN
+F 1 "+3.3V" H 10465 14123 50  0000 C CNN
+F 2 "" H 10450 13950 50  0001 C CNN
+F 3 "" H 10450 13950 50  0001 C CNN
+	1    10450 13950
+	1    0    0    -1  
+$EndComp
+Connection ~ 10450 13950
+Wire Wire Line
+	10450 13950 10650 13950
+$Comp
+L power:GND #PWR063
+U 1 1 6287D5FA
+P 10450 14350
+F 0 "#PWR063" H 10450 14100 50  0001 C CNN
+F 1 "GND" H 10455 14177 50  0001 C CNN
+F 2 "" H 10450 14350 50  0001 C CNN
+F 3 "" H 10450 14350 50  0001 C CNN
+	1    10450 14350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10250 14250 10250 14350
+Wire Wire Line
+	10250 14350 10450 14350
+Wire Wire Line
+	10650 14350 10650 14250
+Connection ~ 10450 14350
+Wire Wire Line
+	10450 14350 10650 14350
+$Comp
+L power:+5V #PWR059
+U 1 1 628BF3F9
+P 7650 13950
+F 0 "#PWR059" H 7650 13800 50  0001 C CNN
+F 1 "+5V" H 7550 14100 50  0000 L CNN
+F 2 "" H 7650 13950 50  0001 C CNN
+F 3 "" H 7650 13950 50  0001 C CNN
+	1    7650 13950
+	1    0    0    -1  
+$EndComp
+Connection ~ 7650 13950
+Wire Wire Line
+	7650 13950 7850 13950
+Wire Wire Line
+	7850 13950 8600 13950
+Connection ~ 7850 13950
+Wire Wire Line
+	8700 14100 8600 14100
+Wire Wire Line
+	8600 14100 8600 13950
+Connection ~ 8600 13950
+Wire Wire Line
+	8600 13950 8700 13950
+$Comp
+L power:GND #PWR061
+U 1 1 62902717
+P 7750 14250
+F 0 "#PWR061" H 7750 14000 50  0001 C CNN
+F 1 "GND" H 7755 14077 50  0001 C CNN
+F 2 "" H 7750 14250 50  0001 C CNN
+F 3 "" H 7750 14250 50  0001 C CNN
+	1    7750 14250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 14250 7750 14250
+Connection ~ 7750 14250
+Wire Wire Line
+	7750 14250 7850 14250
+$Comp
+L power:GND #PWR062
+U 1 1 62919677
+P 8650 14300
+F 0 "#PWR062" H 8650 14050 50  0001 C CNN
+F 1 "GND" H 8655 14127 50  0001 C CNN
+F 2 "" H 8650 14300 50  0001 C CNN
+F 3 "" H 8650 14300 50  0001 C CNN
+	1    8650 14300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8650 14300 8650 14250
+Wire Wire Line
+	8650 14250 8700 14250
+Wire Wire Line
+	9550 13950 10200 13950
+$Comp
+L personal_resistors:100k R29
+U 1 1 62962B61
+P 9900 14100
+F 0 "R29" V 9950 14250 50  0000 C CNN
+F 1 "100k" V 9950 13900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 9900 14100 50  0001 C CNN
+F 3 "~" H 9900 14100 50  0001 C CNN
+F 4 "Delta Electronics/Cyntec" H 9900 14100 50  0001 C CNN "Manufacturer"
+F 5 "2037-PFR05S-104-FNHCT-ND" H 9900 14100 50  0001 C CNN "Part Number"
+F 6 "0402" V 9850 14250 50  0000 C CNN "Size"
+	1    9900 14100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L personal_leds:SML-D12P8WT86 LED5
+U 1 1 6296681A
+P 10000 14650
+F 0 "LED5" V 10050 14500 50  0000 C CNN
+F 1 "SML-D12P8WT86" H 9600 14700 50  0001 C CNN
+F 2 "LED_SMD:LED_0603_1608Metric" V 10000 14650 50  0001 C CNN
+F 3 "https://fscdn.rohm.com/en/products/databook/datasheet/opto/led/chip_mono/sml-d12x8_d13x8-e.pdf" V 10000 14650 50  0001 C CNN
+F 4 "Rohm Semiconductor" H 10000 14850 50  0001 C CNN "Manufacturer"
+F 5 "511-1579-1-ND" H 10000 14900 50  0001 C CNN "Part Number"
+F 6 "Green" V 9950 14500 50  0000 C CNN "Color"
+	1    10000 14650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L personal_fets:DMN67D8LW-13 Q4
+U 1 1 62968497
+P 9900 15250
+F 0 "Q4" H 10105 15296 50  0000 L CNN
+F 1 "DMN67D8LW-13" H 10105 15205 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-323_SC-70" H 10100 15175 50  0001 L CIN
+F 3 "https://www.diodes.com/assets/Datasheets/BSS138W.pdf" H 9900 15250 50  0001 L CNN
+F 4 "Diodes Incorporated" H 9900 15250 50  0001 L CNN "Manufacturer"
+F 5 "DMN67D8LW-13DICT-ND" H 9900 15250 50  0001 L CNN "Part Number"
+	1    9900 15250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10000 14100 10200 14100
+Wire Wire Line
+	10200 14100 10200 13950
+Connection ~ 10200 13950
+Wire Wire Line
+	10200 13950 10250 13950
+Wire Wire Line
+	9800 14100 9600 14100
+$Comp
+L power:+3.3V #PWR064
+U 1 1 629BF4E2
+P 10000 14550
+F 0 "#PWR064" H 10000 14400 50  0001 C CNN
+F 1 "+3.3V" H 10015 14723 50  0000 C CNN
+F 2 "" H 10000 14550 50  0001 C CNN
+F 3 "" H 10000 14550 50  0001 C CNN
+	1    10000 14550
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_resistors:330 R30
+U 1 1 629EFE83
+P 10000 14900
+F 0 "R30" H 9850 14800 50  0000 L CNN
+F 1 "330" H 9800 14900 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 10000 14900 50  0001 C CNN
+F 3 "~" H 10000 14900 50  0001 C CNN
+F 4 "YAGEO" H 10000 14900 50  0001 C CNN "Manufacturer"
+F 5 "311-330LRCT-ND" H 10000 14900 50  0001 C CNN "Part Number"
+F 6 "0402" H 9750 15000 50  0000 L CNN "Size"
+	1    10000 14900
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10000 14800 10000 14750
+Wire Wire Line
+	10000 15050 10000 15000
+$Comp
+L power:GND #PWR065
+U 1 1 62A22235
+P 10000 15500
+F 0 "#PWR065" H 10000 15250 50  0001 C CNN
+F 1 "GND" H 10005 15327 50  0001 C CNN
+F 2 "" H 10000 15500 50  0001 C CNN
+F 3 "" H 10000 15500 50  0001 C CNN
+	1    10000 15500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10000 15500 10000 15450
+Wire Wire Line
+	9700 15250 9600 15250
+Wire Wire Line
+	9600 15250 9600 14100
+Connection ~ 9600 14100
+Wire Wire Line
+	9600 14100 9550 14100
+$Comp
+L personal_capacitors:22uF_1206 C25
+U 1 1 61DE37A8
+P 6600 11700
+F 0 "C25" H 6650 11800 50  0000 L CNN
+F 1 "22uF_1206" H 6700 11700 50  0001 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 6600 11700 50  0001 C CNN
+F 3 "~" H 6600 11700 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 6600 11700 50  0001 C CNN "Manufacturer"
+F 5 "1276-3047-1-ND" H 6600 11700 50  0001 C CNN "Part Number"
+F 6 "1206" H 6650 11500 50  0000 L CNN "Size"
+F 7 "25V" H 6650 11600 50  0000 L CNN "Voltage"
+F 8 "22uF" H 6700 11700 50  0000 L CNN "CapValue"
+	1    6600 11700
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:22uF_1206 C26
+U 1 1 61E13904
+P 6950 11700
+F 0 "C26" H 7000 11800 50  0000 L CNN
+F 1 "22uF_1206" H 7050 11700 50  0001 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 6950 11700 50  0001 C CNN
+F 3 "~" H 6950 11700 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 6950 11700 50  0001 C CNN "Manufacturer"
+F 5 "1276-3047-1-ND" H 6950 11700 50  0001 C CNN "Part Number"
+F 6 "1206" H 7000 11500 50  0000 L CNN "Size"
+F 7 "25V" H 7000 11600 50  0000 L CNN "Voltage"
+F 8 "22uF" H 7050 11700 50  0000 L CNN "CapValue"
+	1    6950 11700
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:22uF_1206 C27
+U 1 1 61E147C1
+P 7300 11700
+F 0 "C27" H 7350 11800 50  0000 L CNN
+F 1 "22uF_1206" H 7400 11700 50  0001 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 7300 11700 50  0001 C CNN
+F 3 "~" H 7300 11700 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 7300 11700 50  0001 C CNN "Manufacturer"
+F 5 "1276-3047-1-ND" H 7300 11700 50  0001 C CNN "Part Number"
+F 6 "1206" H 7350 11500 50  0000 L CNN "Size"
+F 7 "25V" H 7350 11600 50  0000 L CNN "Voltage"
+F 8 "22uF" H 7400 11700 50  0000 L CNN "CapValue"
+	1    7300 11700
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:22uF_1206 C28
+U 1 1 61E15CF1
+P 7650 11700
+F 0 "C28" H 7700 11800 50  0000 L CNN
+F 1 "22uF_1206" H 7750 11700 50  0001 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 7650 11700 50  0001 C CNN
+F 3 "~" H 7650 11700 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 7650 11700 50  0001 C CNN "Manufacturer"
+F 5 "1276-3047-1-ND" H 7650 11700 50  0001 C CNN "Part Number"
+F 6 "1206" H 7700 11500 50  0000 L CNN "Size"
+F 7 "25V" H 7700 11600 50  0000 L CNN "Voltage"
+F 8 "22uF" H 7750 11700 50  0000 L CNN "CapValue"
+	1    7650 11700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 11600 6600 11550
+Wire Wire Line
+	6600 11550 6950 11550
+Wire Wire Line
+	7650 11600 7650 11550
+Connection ~ 7650 11550
+Wire Wire Line
+	7650 11550 8150 11550
+Wire Wire Line
+	7300 11600 7300 11550
+Connection ~ 7300 11550
+Wire Wire Line
+	7300 11550 7650 11550
+Wire Wire Line
+	6950 11600 6950 11550
+Connection ~ 6950 11550
+Wire Wire Line
+	6950 11550 7150 11550
+Wire Wire Line
+	6600 11800 6600 11850
+Wire Wire Line
+	6600 11850 6900 11850
+Wire Wire Line
+	7650 11850 7650 11800
+Wire Wire Line
+	7300 11800 7300 11850
+Connection ~ 7300 11850
+Wire Wire Line
+	7300 11850 7650 11850
+Wire Wire Line
+	6950 11800 6950 11850
+Connection ~ 6950 11850
+Wire Wire Line
+	6950 11850 7300 11850
+$Comp
+L power:GND #PWR044
+U 1 1 61EDDE9C
+P 6900 11900
+F 0 "#PWR044" H 6900 11650 50  0001 C CNN
+F 1 "GND" H 6905 11727 50  0001 C CNN
+F 2 "" H 6900 11900 50  0001 C CNN
+F 3 "" H 6900 11900 50  0001 C CNN
+	1    6900 11900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6900 11900 6900 11850
+Connection ~ 6900 11850
+Wire Wire Line
+	6900 11850 6950 11850
+$Comp
+L personal_capacitors:270uF C29
+U 1 1 61F3A0CC
+P 10650 11700
+F 0 "C29" H 10738 11791 50  0000 L CNN
+F 1 "270uF" H 10738 11700 50  0000 L CNN
+F 2 "personal:CAP_16SVPG270M" H 10650 11700 50  0001 C CNN
+F 3 "~" H 10650 11700 50  0001 C CNN
+F 4 "Panasonic Electronic Components" H 10650 11700 50  0001 C CNN "Manufacturer"
+F 5 "PCE5081CT-ND" H 10650 11700 50  0001 C CNN "Part Number"
+F 6 "16V" H 10738 11609 50  0000 L CNN "Voltage"
+	1    10650 11700
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:270uF C30
+U 1 1 61F3E509
+P 11050 11700
+F 0 "C30" H 11138 11791 50  0000 L CNN
+F 1 "270uF" H 11138 11700 50  0000 L CNN
+F 2 "personal:CAP_16SVPG270M" H 11050 11700 50  0001 C CNN
+F 3 "~" H 11050 11700 50  0001 C CNN
+F 4 "Panasonic Electronic Components" H 11050 11700 50  0001 C CNN "Manufacturer"
+F 5 "PCE5081CT-ND" H 11050 11700 50  0001 C CNN "Part Number"
+F 6 "16V" H 11138 11609 50  0000 L CNN "Voltage"
+	1    11050 11700
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_resistors:5.62k R23
+U 1 1 61F79DA7
+P 10100 11750
+F 0 "R23" V 10050 11600 50  0000 C CNN
+F 1 "5.62k" V 10050 11950 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 10100 11750 50  0001 C CNN
+F 3 "~" H 10100 11750 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 10100 11750 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0805FT5K62CT-ND" H 10100 11750 50  0001 C CNN "Part Number"
+F 6 "0805" V 10150 11600 50  0000 C CNN "Size"
+	1    10100 11750
+	0    1    1    0   
+$EndComp
+$Comp
+L personal_resistors:1.07k R25
+U 1 1 61F7B85A
+P 9800 12000
+F 0 "R25" H 9868 12091 50  0000 L CNN
+F 1 "1.07k" H 9868 12000 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 9800 12000 50  0001 C CNN
+F 3 "~" H 9800 12000 50  0001 C CNN
+F 4 "YAGEO" H 9800 12000 50  0001 C CNN "Manufacturer"
+F 5 "311-1.07KCRCT-ND" H 9800 12000 50  0001 C CNN "Part Number"
+F 6 "0805" H 9868 11909 50  0000 L CNN "Size"
+	1    9800 12000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9700 11750 9800 11750
+Wire Wire Line
+	9800 11900 9800 11750
+Connection ~ 9800 11750
+Wire Wire Line
+	9800 11750 10000 11750
+$Comp
+L power:GND #PWR049
+U 1 1 61FB4960
+P 9800 12150
+F 0 "#PWR049" H 9800 11900 50  0001 C CNN
+F 1 "GND" H 9805 11977 50  0001 C CNN
+F 2 "" H 9800 12150 50  0001 C CNN
+F 3 "" H 9800 12150 50  0001 C CNN
+	1    9800 12150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9800 12150 9800 12100
+Wire Wire Line
+	10200 11750 10450 11750
+Wire Wire Line
+	10450 11750 10450 11550
+Wire Wire Line
+	9700 11550 10450 11550
+Wire Wire Line
+	11050 11550 11050 11600
+Connection ~ 10450 11550
+Wire Wire Line
+	10450 11550 10650 11550
+Wire Wire Line
+	10650 11600 10650 11550
+Connection ~ 10650 11550
+Wire Wire Line
+	10650 11550 10850 11550
+$Comp
+L power:GND #PWR043
+U 1 1 6201FCE6
+P 10850 11850
+F 0 "#PWR043" H 10850 11600 50  0001 C CNN
+F 1 "GND" H 10855 11677 50  0001 C CNN
+F 2 "" H 10850 11850 50  0001 C CNN
+F 3 "" H 10850 11850 50  0001 C CNN
+	1    10850 11850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10650 11800 10650 11850
+Wire Wire Line
+	10650 11850 10850 11850
+Wire Wire Line
+	11050 11850 11050 11800
+Connection ~ 10850 11850
+Wire Wire Line
+	10850 11850 11050 11850
+$Comp
+L power:+12V #PWR040
+U 1 1 62058CB3
+P 7150 11550
+F 0 "#PWR040" H 7150 11400 50  0001 C CNN
+F 1 "+12V" H 7165 11723 50  0000 C CNN
+F 2 "" H 7150 11550 50  0001 C CNN
+F 3 "" H 7150 11550 50  0001 C CNN
+	1    7150 11550
+	1    0    0    -1  
+$EndComp
+Connection ~ 7150 11550
+Wire Wire Line
+	7150 11550 7300 11550
+$Comp
+L power:+5V #PWR041
+U 1 1 6205A172
+P 10850 11550
+F 0 "#PWR041" H 10850 11400 50  0001 C CNN
+F 1 "+5V" H 10750 11700 50  0000 L CNN
+F 2 "" H 10850 11550 50  0001 C CNN
+F 3 "" H 10850 11550 50  0001 C CNN
+	1    10850 11550
+	1    0    0    -1  
+$EndComp
+Connection ~ 10850 11550
+Wire Wire Line
+	10850 11550 11050 11550
+Wire Wire Line
+	2950 3500 4100 3500
+Wire Wire Line
+	2600 3100 4100 3100
+$Comp
+L personal_connectors:PJ-080BH J2
+U 1 1 61DFE0F9
+P 1850 12600
+F 0 "J2" H 1907 12917 50  0000 C CNN
+F 1 "PJ-080BH" H 1907 12826 50  0000 C CNN
+F 2 "personal:CUI_PJ-080BH" H 1900 12560 50  0001 C CNN
+F 3 "https://www.cuidevices.com/product/resource/pj-080bh.pdf" H 1900 12560 50  0001 C CNN
+F 4 "CUI Devices" H 1850 12600 50  0001 C CNN "Manufacturer"
+F 5 "CP-080BHCT-ND" H 1850 12600 50  0001 C CNN "Part Number"
+	1    1850 12600
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_diode:ESD12VD3-TP D3
+U 1 1 61E0A386
+P 2400 12650
+F 0 "D3" V 2354 12720 50  0000 L CNN
+F 1 "ESD12VD3-TP" H 2300 12550 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-323" V 2400 12650 50  0001 C CNN
+F 3 "https://www.mccsemi.com/pdf/Products/ESD5V0D3~ESD12VD3(SOD-323).pdf" V 2400 12650 50  0001 C CNN
+F 4 "Micro Commercial Co" H 2400 12650 50  0001 C CNN "Manufacturer"
+F 5 "ESD12VD3-TPMSCT-ND" H 2400 12650 50  0001 C CNN "Part Number"
+	1    2400 12650
+	0    1    1    0   
+$EndComp
+Connection ~ 2750 12500
+Connection ~ 2750 12900
+Wire Wire Line
+	2750 12900 2850 12900
+Connection ~ 3100 12500
+Connection ~ 3100 12900
+Connection ~ 3450 12500
+Connection ~ 3450 12900
+Wire Wire Line
+	2150 12500 2400 12500
+Wire Wire Line
+	2750 12500 3100 12500
+Wire Wire Line
+	2850 12900 3100 12900
+Wire Wire Line
+	3100 12900 3450 12900
+Wire Wire Line
+	2400 12550 2400 12500
+Connection ~ 2400 12500
+Wire Wire Line
+	2400 12500 2750 12500
+Wire Wire Line
+	2400 12750 2400 12900
+Wire Wire Line
+	2400 12900 2750 12900
+Wire Wire Line
+	3450 12500 3800 12500
+Wire Wire Line
+	3450 12900 3800 12900
+Wire Wire Line
+	1950 13050 1950 12900
+Wire Wire Line
+	1950 12900 1850 12900
+Wire Wire Line
+	1650 12900 1650 13050
+Connection ~ 1850 12900
+Wire Wire Line
+	1850 12900 1650 12900
+$Comp
+L personal_leds:SML-D12P8WT86 LED4
+U 1 1 61FB4E96
+P 4150 13000
+F 0 "LED4" V 4200 12850 50  0000 C CNN
+F 1 "SML-D12P8WT86" H 3750 13050 50  0001 C CNN
+F 2 "LED_SMD:LED_0603_1608Metric" V 4150 13000 50  0001 C CNN
+F 3 "https://fscdn.rohm.com/en/products/databook/datasheet/opto/led/chip_mono/sml-d12x8_d13x8-e.pdf" V 4150 13000 50  0001 C CNN
+F 4 "Rohm Semiconductor" H 4150 13200 50  0001 C CNN "Manufacturer"
+F 5 "511-1579-1-ND" H 4150 13250 50  0001 C CNN "Part Number"
+F 6 "Green" V 4100 12850 50  0000 C CNN "Color"
+	1    4150 13000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L personal_resistors:3k R26
+U 1 1 61FBE9ED
+P 4150 12650
+F 0 "R26" H 4218 12741 50  0000 L CNN
+F 1 "3k" H 4218 12650 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 4150 12650 50  0001 C CNN
+F 3 "~" H 4150 12650 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 4150 12650 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402FT3K00CT-ND" H 4150 12650 50  0001 C CNN "Part Number"
+F 6 "0402" H 4218 12559 50  0000 L CNN "Size"
+	1    4150 12650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR056
+U 1 1 61FBFACB
+P 4150 13150
+F 0 "#PWR056" H 4150 12900 50  0001 C CNN
+F 1 "GND" H 4155 12977 50  0001 C CNN
+F 2 "" H 4150 13150 50  0001 C CNN
+F 3 "" H 4150 13150 50  0001 C CNN
+	1    4150 13150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 12500 4150 12500
+Wire Wire Line
+	4150 12500 4150 12550
+Connection ~ 3800 12500
+Wire Wire Line
+	4150 12750 4150 12900
+Wire Wire Line
+	4150 13100 4150 13150
+$Comp
+L personal_leds:SML-D12P8WT86 LED3
+U 1 1 6203CC30
+P 11500 12000
+F 0 "LED3" V 11550 11850 50  0000 C CNN
+F 1 "SML-D12P8WT86" H 11100 12050 50  0001 C CNN
+F 2 "LED_SMD:LED_0603_1608Metric" V 11500 12000 50  0001 C CNN
+F 3 "https://fscdn.rohm.com/en/products/databook/datasheet/opto/led/chip_mono/sml-d12x8_d13x8-e.pdf" V 11500 12000 50  0001 C CNN
+F 4 "Rohm Semiconductor" H 11500 12200 50  0001 C CNN "Manufacturer"
+F 5 "511-1579-1-ND" H 11500 12250 50  0001 C CNN "Part Number"
+F 6 "Green" V 11450 11850 50  0000 C CNN "Color"
+	1    11500 12000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR050
+U 1 1 6203D3AA
+P 11500 12150
+F 0 "#PWR050" H 11500 11900 50  0001 C CNN
+F 1 "GND" H 11505 11977 50  0001 C CNN
+F 2 "" H 11500 12150 50  0001 C CNN
+F 3 "" H 11500 12150 50  0001 C CNN
+	1    11500 12150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11500 12100 11500 12150
+$Comp
+L personal_resistors:820 R21
+U 1 1 620832DF
+P 11500 11700
+F 0 "R21" H 11568 11791 50  0000 L CNN
+F 1 "820" H 11568 11700 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 11500 11700 50  0001 C CNN
+F 3 "~" H 11500 11700 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 11500 11700 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402FT820RCT-ND" H 11500 11700 50  0001 C CNN "Part Number"
+F 6 "0402" H 11568 11609 50  0000 L CNN "Size"
+	1    11500 11700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11050 11550 11500 11550
+Wire Wire Line
+	11500 11550 11500 11600
+Connection ~ 11050 11550
+Wire Wire Line
+	11500 11800 11500 11900
+$Comp
+L personal_switch:PB400EEQR1BLK SW6
+U 1 1 620EE7EC
+P 5350 13200
+F 0 "SW6" H 5350 13485 50  0000 C CNN
+F 1 "PB400EEQR1BLK" H 5350 13394 50  0000 C CNN
+F 2 "personal:PB400EEQR1BLK" H 5350 13400 50  0001 C CNN
+F 3 "https://sten-eswitch-13110800-production.s3.amazonaws.com/system/asset/product_line/data_sheet/234/PB400.pdf" H 5350 13400 50  0001 C CNN
+F 4 "E-Switch" H 5350 13200 50  0001 C CNN "Manufacturer"
+F 5 "Ologic" H 5350 13200 50  0001 C CNN "Part Number"
+	1    5350 13200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 12500 4550 12500
+Connection ~ 4150 12500
+Wire Wire Line
+	4550 12500 4550 12700
+$Comp
+L personal_resistors:100k R27
+U 1 1 621BE0C5
+P 4550 12800
+F 0 "R27" H 4618 12891 50  0000 L CNN
+F 1 "100k" H 4618 12800 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 4550 12800 50  0001 C CNN
+F 3 "~" H 4550 12800 50  0001 C CNN
+F 4 "Delta Electronics/Cyntec" H 4550 12800 50  0001 C CNN "Manufacturer"
+F 5 "2037-PFR05S-104-FNHCT-ND" H 4550 12800 50  0001 C CNN "Part Number"
+F 6 "0402" H 4618 12709 50  0000 L CNN "Size"
+	1    4550 12800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 12900 4550 13400
+Wire Wire Line
+	5150 13200 5100 13200
+Wire Wire Line
+	5100 13200 5100 13400
+Connection ~ 5100 13400
+Wire Wire Line
+	5100 13400 5150 13400
+Wire Wire Line
+	4550 13400 4950 13400
+Wire Wire Line
+	4950 12800 4950 13400
+Connection ~ 4950 13400
+Wire Wire Line
+	4950 13400 5100 13400
+Wire Wire Line
+	4550 12500 4750 12500
+Connection ~ 4550 12500
+Wire Wire Line
+	3100 12500 3450 12500
+$Comp
+L power:GND #PWR058
+U 1 1 6237C989
+P 5650 13400
+F 0 "#PWR058" H 5650 13150 50  0001 C CNN
+F 1 "GND" H 5655 13227 50  0001 C CNN
+F 2 "" H 5650 13400 50  0001 C CNN
+F 3 "" H 5650 13400 50  0001 C CNN
+	1    5650 13400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 13200 5650 13200
+Wire Wire Line
+	5650 13200 5650 13400
+Wire Wire Line
+	5550 13400 5650 13400
+Connection ~ 5650 13400
+$Comp
+L personal_fets:SI3469DV-T1-E3 Q3
+U 1 1 622AA0A2
+P 4950 12600
+F 0 "Q3" V 4950 12800 50  0000 L CNN
+F 1 "SI3469DV-T1-E3" V 4850 12800 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:TSOT-23-6" H 5150 12700 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/72676/si3469dv.pdf" H 4950 12600 50  0001 C CNN
+F 4 "Vishay Siliconix" H 4950 12600 50  0001 C CNN "Manufacturer"
+F 5 "SI3469DV-T1-E3CT-ND" H 4950 12600 50  0001 C CNN "Part Number"
+	1    4950 12600
+	0    1    -1   0   
+$EndComp
+Text Notes 4450 12200 0    100  ~ 20
+Hardware PWR Switch
+$Comp
+L personal_fuse:C1F_7 F1
+U 1 1 623F56A1
+P 5350 12500
+F 0 "F1" H 5350 12685 50  0000 C CNN
+F 1 "C1F_7" H 5350 12594 50  0000 C CNN
+F 2 "Fuse:Fuse_1206_3216Metric" H 5350 12500 50  0001 C CNN
+F 3 "https://belfuse.com/resources/datasheets/circuitprotection/ds-cp-c1f-series.pdf" H 5350 12500 50  0001 C CNN
+F 4 "Bel Fuse Inc." H 5350 12500 50  0001 C CNN "Manufacturer"
+F 5 "507-1888-1-ND" H 5350 12500 50  0001 C CNN "Part Number"
+	1    5350 12500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5150 12500 5250 12500
+Wire Wire Line
+	5450 12500 5600 12500
+$Comp
+L personal_capacitors:0.1uF C24
+U 1 1 624A7244
+P 2600 8650
+F 0 "C24" H 2692 8787 50  0000 L CNN
+F 1 "0.1uF" H 2692 8696 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 2600 8650 50  0001 C CNN
+F 3 "~" H 2600 8650 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 2600 8650 50  0001 C CNN "Manufacturer"
+F 5 "1276-1043-1-ND" H 2600 8650 50  0001 C CNN "Part Number"
+F 6 "0402" H 2692 8605 50  0000 L CNN "Size"
+F 7 "25V" H 2692 8514 50  0000 L CNN "Voltage"
+	1    2600 8650
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_resistors:330 R20
+U 1 1 624A724D
+P 2300 8650
+F 0 "R20" H 2368 8741 50  0000 L CNN
+F 1 "330" H 2368 8650 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 2300 8650 50  0001 C CNN
+F 3 "~" H 2300 8650 50  0001 C CNN
+F 4 "YAGEO" H 2300 8650 50  0001 C CNN "Manufacturer"
+F 5 "311-330LRCT-ND" H 2300 8650 50  0001 C CNN "Part Number"
+F 6 "0402" H 2368 8559 50  0000 L CNN "Size"
+	1    2300 8650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR035
+U 1 1 624A7253
+P 2450 8800
+F 0 "#PWR035" H 2450 8550 50  0001 C CNN
+F 1 "GND" H 2455 8627 50  0001 C CNN
+F 2 "" H 2450 8800 50  0001 C CNN
+F 3 "" H 2450 8800 50  0001 C CNN
+	1    2450 8800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 8750 2300 8800
+Wire Wire Line
+	2300 8800 2450 8800
+Wire Wire Line
+	2600 8800 2600 8750
+Connection ~ 2450 8800
+Wire Wire Line
+	2450 8800 2600 8800
+$Comp
+L personal:TestPoint TP6
+U 1 1 628DB143
+P 19750 13350
+F 0 "TP6" V 19700 13550 50  0000 L CNN
+F 1 "CLK" V 19800 13550 50  0000 L CNN
+F 2 "personal:CurrentTestPoint" H 19950 13350 50  0001 C CNN
+F 3 "~" H 19950 13350 50  0001 C CNN
+	1    19750 13350
+	0    1    1    0   
+$EndComp
+$Comp
+L personal:TestPoint TP5
+U 1 1 628DA147
+P 19750 13150
+F 0 "TP5" V 19700 13350 50  0000 L CNN
+F 1 "DATA" V 19800 13350 50  0000 L CNN
+F 2 "personal:CurrentTestPoint" H 19950 13150 50  0001 C CNN
+F 3 "~" H 19950 13150 50  0001 C CNN
+	1    19750 13150
+	0    1    1    0   
+$EndComp
+Text Label 19150 13350 0    50   ~ 0
+LED_CLK_IN
+Text Label 19150 13150 0    50   ~ 0
+LED_DATA_IN
+Wire Wire Line
+	19750 13350 19150 13350
+Wire Wire Line
+	19750 13150 19150 13150
+Wire Wire Line
+	19500 12850 19750 12850
+$Comp
+L power:GND #PWR053
+U 1 1 6283C37F
+P 19500 12850
+F 0 "#PWR053" H 19500 12600 50  0001 C CNN
+F 1 "GND" H 19505 12677 50  0001 C CNN
+F 2 "" H 19500 12850 50  0001 C CNN
+F 3 "" H 19500 12850 50  0001 C CNN
+	1    19500 12850
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal:TestPoint TP4
+U 1 1 6283BF23
+P 19750 12850
+F 0 "TP4" V 19700 13050 50  0000 L CNN
+F 1 "GND" V 19800 13050 50  0000 L CNN
+F 2 "personal:CurrentTestPoint" H 19950 12850 50  0001 C CNN
+F 3 "~" H 19950 12850 50  0001 C CNN
+	1    19750 12850
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+12V #PWR051
+U 1 1 62839C32
+P 19500 12600
+F 0 "#PWR051" H 19500 12450 50  0001 C CNN
+F 1 "+12V" H 19515 12773 50  0000 C CNN
+F 2 "" H 19500 12600 50  0001 C CNN
+F 3 "" H 19500 12600 50  0001 C CNN
+	1    19500 12600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	19500 12600 19750 12600
+$Comp
+L personal:TestPoint TP3
+U 1 1 62813EFB
+P 19750 12600
+F 0 "TP3" V 19700 12800 50  0000 L CNN
+F 1 "12V" V 19800 12800 50  0000 L CNN
+F 2 "personal:CurrentTestPoint" H 19950 12600 50  0001 C CNN
+F 3 "~" H 19950 12600 50  0001 C CNN
+	1    19750 12600
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+5V #PWR045
+U 1 1 628110AD
+P 19500 12300
+F 0 "#PWR045" H 19500 12150 50  0001 C CNN
+F 1 "+5V" H 19400 12450 50  0000 L CNN
+F 2 "" H 19500 12300 50  0001 C CNN
+F 3 "" H 19500 12300 50  0001 C CNN
+	1    19500 12300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	19500 12300 19750 12300
+$Comp
+L personal:TestPoint TP2
+U 1 1 627EC2EC
+P 19750 12300
+F 0 "TP2" V 19700 12500 50  0000 L CNN
+F 1 "5V" V 19800 12500 50  0000 L CNN
+F 2 "personal:CurrentTestPoint" H 19950 12300 50  0001 C CNN
+F 3 "~" H 19950 12300 50  0001 C CNN
+	1    19750 12300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	19500 12000 19750 12000
+$Comp
+L power:+3.3V #PWR042
+U 1 1 627998E2
+P 19500 12000
+F 0 "#PWR042" H 19500 11850 50  0001 C CNN
+F 1 "+3.3V" H 19515 12173 50  0000 C CNN
+F 2 "" H 19500 12000 50  0001 C CNN
+F 3 "" H 19500 12000 50  0001 C CNN
+	1    19500 12000
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal:TestPoint TP1
+U 1 1 627988D9
+P 19750 12000
+F 0 "TP1" V 19700 12200 50  0000 L CNN
+F 1 "3V3" V 19800 12200 50  0000 L CNN
+F 2 "personal:CurrentTestPoint" H 19950 12000 50  0001 C CNN
+F 3 "~" H 19950 12000 50  0001 C CNN
+	1    19750 12000
+	0    1    1    0   
+$EndComp
+Text Notes 19350 11650 0    100  ~ 20
+Test Points
+Text Notes 19350 10500 0    100  ~ 20
+UART Pins
+Wire Wire Line
+	19600 10850 19650 10850
+Wire Wire Line
+	19600 10800 19600 10850
+Wire Wire Line
+	19600 11150 19650 11150
+Wire Wire Line
+	19600 11200 19600 11150
+$Comp
+L power:GND #PWR039
+U 1 1 626D4A62
+P 19600 11200
+F 0 "#PWR039" H 19600 10950 50  0001 C CNN
+F 1 "GND" H 19605 11027 50  0001 C CNN
+F 2 "" H 19600 11200 50  0001 C CNN
+F 3 "" H 19600 11200 50  0001 C CNN
+	1    19600 11200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR038
+U 1 1 626AD94B
+P 19600 10800
+F 0 "#PWR038" H 19600 10650 50  0001 C CNN
+F 1 "+3.3V" H 19615 10973 50  0000 C CNN
+F 2 "" H 19600 10800 50  0001 C CNN
+F 3 "" H 19600 10800 50  0001 C CNN
+	1    19600 10800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	19300 11050 19650 11050
+Text Label 19300 11050 0    50   ~ 0
+UART_TX
+Wire Wire Line
+	19300 10950 19650 10950
+Text Label 19300 10950 0    50   ~ 0
+UART_RX
+$Comp
+L Connector_Generic:Conn_01x04 J1
+U 1 1 6263A83E
+P 19850 10950
+F 0 "J1" H 19930 10942 50  0000 L CNN
+F 1 "Conn_01x04" H 19930 10851 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 19850 10950 50  0001 C CNN
+F 3 "~" H 19850 10950 50  0001 C CNN
+	1    19850 10950
+	1    0    0    -1  
+$EndComp
+Text Notes 19300 1800 0    200  ~ 40
+UI Elements
+Wire Wire Line
+	3500 2600 4100 2600
+Wire Wire Line
+	3500 2700 4100 2700
+Wire Wire Line
+	5900 3500 6450 3500
+Wire Wire Line
+	5900 3600 6450 3600
+Wire Wire Line
+	5900 3700 6450 3700
+Text Label 3550 4000 0    50   ~ 0
+LED_DATA_IN
+Text Label 3550 4100 0    50   ~ 0
+LED_CLK_IN
+Wire Wire Line
+	3550 4000 4100 4000
+Wire Wire Line
+	3550 4100 4100 4100
+$Comp
+L personal_resistors:10k R4
+U 1 1 62DB1579
+P 2600 2900
+F 0 "R4" H 2668 2991 50  0000 L CNN
+F 1 "10k" H 2668 2900 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 2600 2900 50  0001 C CNN
+F 3 "~" H 2600 2900 50  0001 C CNN
+F 4 "Stackpole Electronics Inc" H 2600 2900 50  0001 C CNN "Manufacturer"
+F 5 "RMCF0402FT10K0CT-ND" H 2600 2900 50  0001 C CNN "Part Number"
+F 6 "0402" H 2668 2809 50  0000 L CNN "Size"
+	1    2600 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:1uF C15
+U 1 1 62DB6E7E
+P 2550 3700
+F 0 "C15" H 2642 3837 50  0000 L CNN
+F 1 "1uF" H 2642 3746 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 2550 3700 50  0001 C CNN
+F 3 "~" H 2550 3700 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 2550 3700 50  0001 C CNN "Manufacturer"
+F 5 "1276-1076-1-ND" H 2550 3700 50  0001 C CNN "Part Number"
+F 6 "0402" H 2642 3655 50  0000 L CNN "Size"
+F 7 "10V" H 2642 3564 50  0000 L CNN "Voltage"
+	1    2550 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:2.2uF C1
+U 1 1 61E94423
+P 1950 1950
+F 0 "C1" H 2042 2087 50  0000 L CNN
+F 1 "2.2uF" H 2042 1996 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1950 1950 50  0001 C CNN
+F 3 "~" H 1950 1950 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 1950 1950 50  0001 C CNN "Manufacturer"
+F 5 "1276-1085-1-ND" H 1950 1950 50  0001 C CNN "Part Number"
+F 6 "0603" H 2042 1905 50  0000 L CNN "Size"
+F 7 "10V" H 2042 1814 50  0000 L CNN "Voltage"
+	1    1950 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 3800 6450 3800
+Wire Wire Line
+	5900 3900 6450 3900
+Text Label 5950 3800 0    50   ~ 0
+GPIO22
+Text Label 5950 3900 0    50   ~ 0
+GPIO23
+Wire Wire Line
+	19250 13600 19750 13600
+Wire Wire Line
+	19250 13800 19750 13800
+Text Label 19250 13600 0    50   ~ 0
+GPIO22
+Text Label 19250 13800 0    50   ~ 0
+GPIO23
+$Comp
+L personal:TestPoint TP7
+U 1 1 62EC4ABE
+P 19750 13600
+F 0 "TP7" V 19700 13800 50  0000 L CNN
+F 1 "IO22" V 19800 13800 50  0000 L CNN
+F 2 "personal:CurrentTestPoint" H 19950 13600 50  0001 C CNN
+F 3 "~" H 19950 13600 50  0001 C CNN
+	1    19750 13600
+	0    1    1    0   
+$EndComp
+$Comp
+L personal:TestPoint TP8
+U 1 1 62EC4E75
+P 19750 13800
+F 0 "TP8" V 19700 14000 50  0000 L CNN
+F 1 "IO23" V 19800 14000 50  0000 L CNN
+F 2 "personal:CurrentTestPoint" H 19950 13800 50  0001 C CNN
+F 3 "~" H 19950 13800 50  0001 C CNN
+	1    19750 13800
+	0    1    1    0   
+$EndComp
+NoConn ~ 4100 2850
+NoConn ~ 4100 2950
+NoConn ~ 4100 3250
+NoConn ~ 4100 3350
+NoConn ~ 4100 4500
+NoConn ~ 4100 4600
+NoConn ~ 4100 4700
+Wire Wire Line
+	4100 3800 3800 3800
+Text Label 3800 3800 0    50   ~ 0
+IO5
+NoConn ~ 4100 3700
+Text Label 19300 14000 0    50   ~ 0
+IO5
+$Comp
+L personal:TestPoint TP9
+U 1 1 6303A0BE
+P 19750 14000
+F 0 "TP9" V 19700 14200 50  0000 L CNN
+F 1 "IO5" V 19800 14200 50  0000 L CNN
+F 2 "personal:CurrentTestPoint" H 19950 14000 50  0001 C CNN
+F 3 "~" H 19950 14000 50  0001 C CNN
+	1    19750 14000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	19300 14000 19750 14000
+$Comp
+L power:GND #PWR047
+U 1 1 631528E5
+P 9300 12000
+F 0 "#PWR047" H 9300 11750 50  0001 C CNN
+F 1 "GND" H 9305 11827 50  0001 C CNN
+F 2 "" H 9300 12000 50  0001 C CNN
+F 3 "" H 9300 12000 50  0001 C CNN
+	1    9300 12000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9200 11950 9200 12000
+Wire Wire Line
+	9200 12000 9300 12000
+Wire Wire Line
+	9400 12000 9400 11950
+Connection ~ 9300 12000
+Wire Wire Line
+	9300 12000 9400 12000
+NoConn ~ 5900 3300
+NoConn ~ 5900 3400
+$Comp
+L personal_capacitors:0.47uF C31
+U 1 1 631DC9C3
+P 8000 12050
+F 0 "C31" H 8092 12187 50  0000 L CNN
+F 1 "0.47uF" H 8092 12096 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 8000 12050 50  0001 C CNN
+F 3 "~" H 8000 12050 50  0001 C CNN
+F 4 "Samsung Electro-Mechanics" H 8000 12050 50  0001 C CNN "Manufacturer"
+F 5 "1276-1074-1-ND" H 8000 12050 50  0001 C CNN "Part Number"
+F 6 "0805" H 8092 12005 50  0000 L CNN "Size"
+F 7 "25V" H 8092 11914 50  0000 L CNN "Voltage"
+	1    8000 12050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 11950 8000 11650
+$Comp
+L power:GND #PWR048
+U 1 1 6320A92C
+P 8000 12150
+F 0 "#PWR048" H 8000 11900 50  0001 C CNN
+F 1 "GND" H 8005 11977 50  0001 C CNN
+F 2 "" H 8000 12150 50  0001 C CNN
+F 3 "" H 8000 12150 50  0001 C CNN
+	1    8000 12150
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_resistors:100k R22
+U 1 1 6320D8FA
+P 8400 11750
+F 0 "R22" V 8350 11600 50  0000 C CNN
+F 1 "100k" V 8350 11900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8400 11750 50  0001 C CNN
+F 3 "~" H 8400 11750 50  0001 C CNN
+F 4 "Delta Electronics/Cyntec" H 8400 11750 50  0001 C CNN "Manufacturer"
+F 5 "2037-PFR05S-104-FNHCT-ND" H 8400 11750 50  0001 C CNN "Part Number"
+F 6 "0402" V 8450 11600 50  0000 C CNN "Size"
+	1    8400 11750
+	0    1    1    0   
+$EndComp
+$Comp
+L personal_resistors:22k R24
+U 1 1 6320EF5B
+P 8650 11900
+F 0 "R24" H 8718 11991 50  0000 L CNN
+F 1 "22k" H 8718 11900 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8650 11900 50  0001 C CNN
+F 3 "~" H 8650 11900 50  0001 C CNN
+F 4 "Bourns Inc." H 8650 11900 50  0001 C CNN "Manufacturer"
+F 5 "CR0402-FX-2202GLFCT-ND" H 8650 11900 50  0001 C CNN "Part Number"
+F 6 "0402" H 8718 11809 50  0000 L CNN "Size"
+	1    8650 11900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 11650 8900 11650
+Wire Wire Line
+	8650 11800 8650 11750
+Wire Wire Line
+	8650 11750 8900 11750
+Wire Wire Line
+	8650 11750 8500 11750
+Connection ~ 8650 11750
+Wire Wire Line
+	8300 11750 8150 11750
+Wire Wire Line
+	8150 11750 8150 11550
+Connection ~ 8150 11550
+$Comp
+L power:GND #PWR046
+U 1 1 6334D92F
+P 8650 12000
+F 0 "#PWR046" H 8650 11750 50  0001 C CNN
+F 1 "GND" H 8655 11827 50  0001 C CNN
+F 2 "" H 8650 12000 50  0001 C CNN
+F 3 "" H 8650 12000 50  0001 C CNN
+	1    8650 12000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8150 11550 8900 11550
+$Comp
+L personal_diode:ESD7951ST5G D1
+U 1 1 63385EBB
+P 4750 7900
+F 0 "D1" V 4704 7980 50  0000 L CNN
+F 1 "ESD7951ST5G" V 4795 7980 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-923" H 4750 7900 50  0001 C CNN
+F 3 "https://www.onsemi.com/pdf/datasheet/esd7951s-d.pdf" H 4750 7900 50  0001 C CNN
+F 4 "onsemi" H 4750 7900 50  0001 C CNN "Manufacturer"
+F 5 "ESD7951ST5GOSCT-ND" H 4750 7900 50  0001 C CNN "Part Number"
+	1    4750 7900
+	0    1    1    0   
+$EndComp
+$Comp
+L personal_diode:ESD7951ST5G D2
+U 1 1 63387905
+P 5450 7900
+F 0 "D2" V 5404 7980 50  0000 L CNN
+F 1 "ESD7951ST5G" V 5495 7980 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-923" H 5450 7900 50  0001 C CNN
+F 3 "https://www.onsemi.com/pdf/datasheet/esd7951s-d.pdf" H 5450 7900 50  0001 C CNN
+F 4 "onsemi" H 5450 7900 50  0001 C CNN "Manufacturer"
+F 5 "ESD7951ST5GOSCT-ND" H 5450 7900 50  0001 C CNN "Part Number"
+	1    5450 7900
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR030
+U 1 1 63389C46
+P 4750 8050
+F 0 "#PWR030" H 4750 7800 50  0001 C CNN
+F 1 "GND" H 4755 7877 50  0001 C CNN
+F 2 "" H 4750 8050 50  0001 C CNN
+F 3 "" H 4750 8050 50  0001 C CNN
+	1    4750 8050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR031
+U 1 1 6338A0C1
+P 5450 8050
+F 0 "#PWR031" H 5450 7800 50  0001 C CNN
+F 1 "GND" H 5455 7877 50  0001 C CNN
+F 2 "" H 5450 8050 50  0001 C CNN
+F 3 "" H 5450 8050 50  0001 C CNN
+	1    5450 8050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 7750 4750 7550
+Connection ~ 4750 7550
+Wire Wire Line
+	4750 7550 6450 7550
+Wire Wire Line
+	5450 7750 5450 7650
+Connection ~ 5450 7650
+Wire Wire Line
+	5450 7650 6450 7650
+$Comp
+L personal_connectors:USB4110-GF-A_REVB CN2
+U 1 1 633FB1C4
+P 3300 7550
+F 0 "CN2" H 3407 8417 50  0000 C CNN
+F 1 "USB4110-GF-A_REVB" H 3407 8326 50  0000 C CNN
+F 2 "personal:GCT_USB4110-GF-A_REVB" H 3450 7550 50  0001 C CNN
+F 3 "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" H 3450 7550 50  0001 C CNN
+F 4 "GCT" H 3300 7550 50  0001 C CNN "Manufacturer"
+F 5 "2073-USB4110-GF-A-1-ND" H 3300 8400 50  0001 C CNN "Part Number"
+	1    3300 7550
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_resistors:5.1k R15
+U 1 1 6340838E
+P 4150 7250
+F 0 "R15" V 4200 7350 50  0000 L CNN
+F 1 "5.1k" V 4200 6950 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 4150 7250 50  0001 C CNN
+F 3 "~" H 4150 7250 50  0001 C CNN
+F 4 "YAGEO" H 4150 7250 50  0001 C CNN "Manufacturer"
+F 5 "311-5.10KLRCT-ND" H 4150 7250 50  0001 C CNN "Part Number"
+F 6 "0402" H 4218 7159 50  0001 L CNN "Size"
+	1    4150 7250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3900 7150 4050 7150
+Wire Wire Line
+	3900 7250 4050 7250
+$Comp
+L power:GND #PWR028
+U 1 1 63466899
+P 4450 7250
+F 0 "#PWR028" H 4450 7000 50  0001 C CNN
+F 1 "GND" H 4455 7077 50  0001 C CNN
+F 2 "" H 4450 7250 50  0001 C CNN
+F 3 "" H 4450 7250 50  0001 C CNN
+	1    4450 7250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 7150 4450 7150
+Wire Wire Line
+	4450 7150 4450 7250
+Wire Wire Line
+	4250 7250 4450 7250
+Connection ~ 4450 7250
+Wire Wire Line
+	2300 8450 2600 8450
+Wire Wire Line
+	2300 8450 2300 8550
+Wire Wire Line
+	2600 8450 2600 8550
+Connection ~ 2600 8450
+Wire Wire Line
+	2600 8450 3000 8450
+Wire Wire Line
+	3900 6600 4150 6600
+Wire Wire Line
+	3900 6600 3900 6950
+$Comp
+L power:GND #PWR026
+U 1 1 636C599C
+P 4500 6900
+F 0 "#PWR026" H 4500 6650 50  0001 C CNN
+F 1 "GND" H 4505 6727 50  0001 C CNN
+F 2 "" H 4500 6900 50  0001 C CNN
+F 3 "" H 4500 6900 50  0001 C CNN
+	1    4500 6900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 6900 4500 6900
+Connection ~ 4500 6900
+Wire Wire Line
+	4500 6900 4550 6900
+Connection ~ 4550 6900
+Wire Wire Line
+	4550 6900 4900 6900
+NoConn ~ 3900 8050
+NoConn ~ 3900 8150
+$Comp
+L power:GND #PWR033
+U 1 1 637CF360
+P 3300 8450
+F 0 "#PWR033" H 3300 8200 50  0001 C CNN
+F 1 "GND" H 3305 8277 50  0001 C CNN
+F 2 "" H 3300 8450 50  0001 C CNN
+F 3 "" H 3300 8450 50  0001 C CNN
+	1    3300 8450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 7650 5450 7650
+Wire Wire Line
+	4050 7550 4050 7650
+Wire Wire Line
+	4050 7750 3900 7750
+Wire Wire Line
+	4050 7550 4750 7550
+Wire Wire Line
+	3900 7650 4050 7650
+Connection ~ 4050 7650
+Wire Wire Line
+	4050 7650 4050 7750
+Wire Wire Line
+	4150 7650 4150 7450
+Wire Wire Line
+	4150 7450 4000 7450
+Wire Wire Line
+	4000 7450 4000 7550
+Wire Wire Line
+	4000 7550 3900 7550
+Wire Wire Line
+	4000 7450 3900 7450
+Connection ~ 4000 7450
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 639270A5
+P 21100 13850
+F 0 "H1" H 21200 13896 50  0000 L CNN
+F 1 "MountingHole" H 21200 13805 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380" H 21100 13850 50  0001 C CNN
+F 3 "~" H 21100 13850 50  0001 C CNN
+	1    21100 13850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 6392943D
+P 21850 13850
+F 0 "H2" H 21950 13896 50  0000 L CNN
+F 1 "MountingHole" H 21950 13805 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380" H 21850 13850 50  0001 C CNN
+F 3 "~" H 21850 13850 50  0001 C CNN
+	1    21850 13850
+	1    0    0    -1  
+$EndComp
+Text Label 19250 14250 0    50   ~ 0
+3V3_F232
+$Comp
+L personal:TestPoint TP10
+U 1 1 61F6FA69
+P 19750 14250
+F 0 "TP10" V 19700 14450 50  0000 L CNN
+F 1 "FT232_3V3" V 19800 14450 50  0000 L CNN
+F 2 "personal:CurrentTestPoint" H 19950 14250 50  0001 C CNN
+F 3 "~" H 19950 14250 50  0001 C CNN
+	1    19750 14250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	19250 14250 19750 14250
+$Comp
+L personal_inductors:LQG15HS2N7S02D L1
+U 1 1 6212169C
+P 7050 3100
+F 0 "L1" V 7325 3100 50  0000 C CNN
+F 1 "LQG15HS2N7S02D" V 7234 3100 50  0000 C CNN
+F 2 "Inductor_SMD:L_0402_1005Metric" H 7050 3100 50  0001 C CNN
+F 3 "https://search.murata.co.jp/Ceramy/image/img/P02/JELF243B-0010.pdf" H 7050 3100 50  0001 C CNN
+F 4 "Murata Electronics" H 7050 3100 50  0001 C CNN "Manufacturer"
+F 5 "490-2615-1-ND" H 7050 3100 50  0001 C CNN "Part Number"
+F 6 "2.7nH" V 7143 3100 50  0000 C CNN "Type"
+	1    7050 3100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L personal_capacitors:2pF C42
+U 1 1 6213134A
+P 7250 3300
+F 0 "C42" H 7342 3437 50  0000 L CNN
+F 1 "2pF" H 7342 3346 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 7250 3300 50  0001 C CNN
+F 3 "~" H 7250 3300 50  0001 C CNN
+F 4 "YAGEO" H 7250 3300 50  0001 C CNN "Manufacturer"
+F 5 "311-1006-1-ND" H 7250 3300 50  0001 C CNN "Part Number"
+F 6 "0402" H 7342 3255 50  0000 L CNN "Size"
+F 7 "50V" H 7342 3164 50  0000 L CNN "Voltage"
+	1    7250 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_capacitors:2.7pF C41
+U 1 1 62133333
+P 6700 3300
+F 0 "C41" H 6792 3437 50  0000 L CNN
+F 1 "2.7pF" H 6792 3346 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 6700 3300 50  0001 C CNN
+F 3 "~" H 6700 3300 50  0001 C CNN
+F 4 "YAGEO" H 6700 3300 50  0001 C CNN "Manufacturer"
+F 5 "311-1005-1-ND" H 6700 3300 50  0001 C CNN "Part Number"
+F 6 "0402" H 6792 3255 50  0000 L CNN "Size"
+F 7 "50V" H 6792 3164 50  0000 L CNN "Voltage"
+	1    6700 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR067
+U 1 1 6213EA88
+P 6700 3400
+F 0 "#PWR067" H 6700 3150 50  0001 C CNN
+F 1 "GND" H 6705 3227 50  0001 C CNN
+F 2 "" H 6700 3400 50  0001 C CNN
+F 3 "" H 6700 3400 50  0001 C CNN
+	1    6700 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR068
+U 1 1 6213FF2B
+P 7250 3400
+F 0 "#PWR068" H 7250 3150 50  0001 C CNN
+F 1 "GND" H 7255 3227 50  0001 C CNN
+F 2 "" H 7250 3400 50  0001 C CNN
+F 3 "" H 7250 3400 50  0001 C CNN
+	1    7250 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 3100 6700 3100
+Wire Wire Line
+	6700 3200 6700 3100
+Connection ~ 6700 3100
+Wire Wire Line
+	6700 3100 6950 3100
+Wire Wire Line
+	7250 3200 7250 3100
+Wire Wire Line
+	7250 3100 7150 3100
+$Comp
+L personal_connectors:1909763-1 CN1
+U 1 1 621FC953
+P 7800 3200
+F 0 "CN1" H 7640 3236 50  0000 R CNN
+F 1 "1909763-1" H 7640 3145 50  0000 R CNN
+F 2 "personal:TE_1909763-1" H 7800 3200 50  0001 L BNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1909763&DocType=Customer+Drawing&DocLang=English" H 7800 3200 50  0001 L BNN
+F 4 "TE Connectivity AMP Connectors" H 7800 3200 50  0001 C CNN "Manufacturer"
+F 5 "A118077CT-ND" H 7800 3200 50  0001 C CNN "Part Number"
+	1    7800 3200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 3100 7700 3100
+Connection ~ 7250 3100
+$Comp
+L power:GND #PWR066
+U 1 1 6222EA6D
+P 7650 3350
+F 0 "#PWR066" H 7650 3100 50  0001 C CNN
+F 1 "GND" H 7655 3177 50  0001 C CNN
+F 2 "" H 7650 3350 50  0001 C CNN
+F 3 "" H 7650 3350 50  0001 C CNN
+	1    7650 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7700 3300 7650 3300
+Wire Wire Line
+	7650 3300 7650 3350
+$Comp
+L power:VBUS #PWR0101
+U 1 1 61E81A24
+P 8450 6550
+F 0 "#PWR0101" H 8450 6400 50  0001 C CNN
+F 1 "VBUS" H 8465 6723 50  0000 C CNN
+F 2 "" H 8450 6550 50  0001 C CNN
+F 3 "" H 8450 6550 50  0001 C CNN
+	1    8450 6550
+	1    0    0    -1  
+$EndComp
+Connection ~ 8450 6550
+Wire Wire Line
+	8450 6550 8600 6550
+Wire Wire Line
+	8200 6550 8450 6550
+$Comp
+L personal_connectors:0436500603 CN3
+U 1 1 61DD4560
+P 15350 3400
+F 0 "CN3" H 15438 3359 50  0000 L CNN
+F 1 "0436500603" H 15438 3268 50  0000 L CNN
+F 2 "personal:436500603" H 15350 3400 50  0001 C CNN
+F 3 "https://www.molex.com/pdm_docs/sd/436500603_sd.pdf" H 15350 3400 50  0001 C CNN
+F 4 "Molex" H 15350 3400 50  0001 C CNN "Manufacturer"
+F 5 "WM1874-ND" H 15350 3400 50  0001 C CNN "Part Number"
+F 6 "Microfit R/A" H 15438 3177 50  0000 L CNN "Type"
+	1    15350 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L personal_mcu:ESP32-PICO-D4 U1
+U 1 1 61DDEAE7
+P 5000 3100
+F 0 "U1" H 5000 4717 50  0000 C CNN
+F 1 "ESP32-PICO-D4" H 5000 4626 50  0000 C CNN
+F 2 "Package_DFN_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP5.3x5.3mm_ThermalVias" H 5000 3100 50  0001 L BNN
+F 3 "https://www.espressif.com/sites/default/files/documentation/esp32-pico-d4_datasheet_en.pdf" H 5000 3100 50  0001 L BNN
+F 4 "Espressif Systems" H 5000 3100 50  0001 C CNN "Manufacturer"
+F 5 "1904-1029-1-ND" H 5000 3100 50  0001 C CNN "Part Number"
+	1    5000 3100
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
