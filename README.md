@@ -7,5 +7,5 @@ This project is an ESP32 that can control a huge array of leds in order to gener
 ![alt text](https://github.com/aahnguye101024/LEDArtBoard/blob/3472900299e02d30ac1a42c4ccac5a7446e8b150/MainBoardBottom.PNG)
 
 # LED Board
-![alt text](https://github.com/aahnguye101024/LEDArtBoard/blob/3472900299e02d30ac1a42c4ccac5a7446e8b150/LedBoardTop.PNG)
-![alt text](https://github.com/aahnguye101024/LEDArtBoard/blob/3472900299e02d30ac1a42c4ccac5a7446e8b150/LedBoardBottom.PNG)
+![alt text](https://github.com/aahnguye101024/LEDArtBoard/blob/1336994662b51923f3acc212d9f05dd9fc9b2c47/LEDBoardTop.PNG)
+![alt text](https://github.com/aahnguye101024/LEDArtBoard/blob/1336994662b51923f3acc212d9f05dd9fc9b2c47/LEDBoardBottom.PNG)
